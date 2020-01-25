@@ -48,8 +48,8 @@ class Action{
         $this->$response = new Response("success",$data,"");
     }
     public function Response(){
-        if ( isset($this->$response) && ($this->$response instanceof Response) ) {
-            return $response;
+        if ( isset($this->$response) && ($this->$response instanceof Response) ) {    
+            return $this->$response; 
         } else {
             return new Response("error",null,"action_execution_error");
         }
