@@ -1,0 +1,128 @@
+/*-----------basic-----------*/
+*{
+		transition: 0.5s;
+}
+html{
+  	position: relative;
+  	min-height: 100%;
+  	overflow-x: none;
+}
+body{
+	background-color:white;
+	margin-bottom: 60px;
+}
+a:hover {
+	text-decoration: none;
+}
+.head-block{
+	width: 100%;
+	height: 50vh;
+	background: linear-gradient(92deg, #f35626 0%,#feab3a 100%);
+    -webkit-background-clip: background;
+            background-clip: background;
+    animation: hue 60s infinite linear;
+   	font-size:40pt;
+	text-align: center;
+	padding-top:calc((25vh / 2) + calc(40pt / 2));
+    text-shadow: 2px 2px 2px rgb(200, 200, 200); 
+	position:relative;
+    color:rgba(255, 255, 255, 1);
+}
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(-360deg);
+  }
+}
+.wrapper{
+	max-width: 100%;
+	margin-top: 0px;
+}
+.footer{
+	width: 100%;
+	height: 50px;
+	color:rgb(119,119,119);
+	position: absolute;
+	bottom: 0;
+}
+.footer > nav > div > .text-right{
+	padding-top: 20px;
+}
+.footer > nav > div > .text-left{
+	margin-left: -20px;
+}
+.block{
+	display: block;
+	margin: 10px;
+}
+.img-b {
+	display:none;
+	border-radius: 10px;
+}
+@media(min-width: 920px){
+	.img-b{
+		display: block;
+	}
+}
+.b-md-4{
+	background-color:white;
+	color:rgb(80,80,80);
+	padding-bottom: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	text-align: center;
+    transition: 0.5s;
+}
+.b-md-4 > p > i{
+	transition: 0.5s;
+}
+.b-md-4:hover > p > i{
+	transform: translateY(-20px);
+}
+.b-md-4:hover{
+	box-shadow: 0 0 15px rgba(200, 200, 200, 1);
+}
+
+.player{
+	background-color: rgb(40, 31, 35);
+	color: white;
+	font-size: 30pt;
+	position: absolute;
+	bottom: 0px;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+}
+
+.muted-button{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+.timeline{
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+}
+.views{
+	display: block;
+	position: absolute;
+	right:10px;
+	font-size: 20pt;
+}
+.back-button{
+	float: left;
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	color: white;
+}
+.back-button:hover{
+	color:rgb(80, 71, 75);
+}
+
