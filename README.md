@@ -1,2 +1,2 @@
-# pornhub
-AI Decorator for Pornhub
+# Pornhub Radmonizer
+by RadioNurshat & Dannikinfo 
