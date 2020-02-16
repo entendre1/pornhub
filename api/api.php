@@ -1,12 +1,13 @@
 <?
 header('Content-Type: text/html; charset=utf-8');
-include './apilib.php';
-include './phapi/phapi.php';
+include 'apilib.php';
+
+
+use Noxyra\PornhubApi\Api\PornhubApi as PornhubApi;
 foreach (glob("./actions/*.php") as $filename)
 {
     include $filename;
 } 
-
 $DATA = $_GET;
 $classes= getImplementingClasses("IAction"); 
 

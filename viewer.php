@@ -1,3 +1,19 @@
+<?
+include './api/apilib.php';
+include './api/actions/random.php';
+parse_str($_SERVER['QUERY_STRING'], $PARAMS);
+$Random = new Random($PARAMS);
+
+$result = $Random->Response()->getData();
+if ($result["status"] == "success"){
+	$embed = $result["data"];
+}
+if ($result["status"] == "error"){
+	$embed = $result["description"];
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +28,18 @@
 </head>
 <body>
 	<div class="player">
-		<a href="/" ><div class="back-button"><i class="fas fa-arrow-left"></i></div></a>
+		<!--<a href="/" ><div class="back-button"><i class="fas fa-arrow-left"></i></div></a>
 		<div class="views"><i class="fas fa-eye"></i>34K</div>
-		<div class="muted-button"><i class="fas fa-volume-mute"></i> <i class="fas fa-cog"></i> <!--\<i class="fas fa-volume-up"></i>--></div>
+		<div class="muted-button"><i class="fas fa-volume-mute"></i> <i class="fas fa-cog"></i> <i class="fas fa-volume-up"></i></div>
 		<div class="timeline">
-			<span class="play-button"><i class="fas fa-play"></i><!--\<i class="fas fa-pause"></i>--></span> .________________________________________________________________________
-		</div>
+			<span class="play-button"><i class="fas fa-play"></i>\<i class="fas fa-pause"></i></span> .________________________________________________________________________
+		</div>-->
+		<?
+		echo html_entity_decode($embed);
+		 //print $embed; 
+		 
+		 
+		 ?>
 	</div>
 </body>
 </html>

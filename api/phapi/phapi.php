@@ -1,9 +1,6 @@
 <?php
-
 namespace Noxyra\PornhubApi\Api;
-
-include "phapi_params.php";
-
+include 'phapi_params.php';
 use Noxyra\PornhubApi\Parameters\PornhubApiParameters;
 
 class PornhubApi
@@ -11,14 +8,14 @@ class PornhubApi
     const ENDPOINT = "http://www.pornhub.com/webmasters/";
 
     public function searchVideos(
-        string $catagory = PornhubApiParameters::_PARAM_CATEGORY_DEFAULT,
         int $page = PornhubApiParameters::_PARAM_PAGE_DEFAULT,
+        string $catagory = PornhubApiParameters::_PARAM_CATEGORY_DEFAULT,
+        array $tags = PornhubApiParameters::_PARAM_TAGS_DEFAULT,
         string $search = PornhubApiParameters::_PARAM_SEARCH_DEFAULT,
         string $ordering = PornhubApiParameters::_PARAM_ORDERING_DEFAULT,
         string $period = PornhubApiParameters::_PARAM_PERIOD_DEFAULT,
         string $thumbsize = PornhubApiParameters::_PARAM_THUMBSIZE_DEFAULT,
-        array $stars = PornhubApiParameters::_PARAM_STARS_DEFAULT,
-        array $tags = PornhubApiParameters::_PARAM_TAGS_DEFAULT
+        array $stars = PornhubApiParameters::_PARAM_STARS_DEFAULT
     )
     {
         return $this->getResults('search', [
@@ -93,7 +90,8 @@ class PornhubApi
      */
     private function getResults($method = '', $params = [])
     {
-        return json_decode(file_get_contents(self::ENDPOINT . $method . $this->buildGetParams($params)));
+        $result = file_get_contents(self::ENDPOINT . $method . $this->buildGetParams($params));
+        return json_decode($result);
     }
 
     /**

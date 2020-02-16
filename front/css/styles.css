@@ -126,3 +126,8 @@ a:hover {
 	color:rgb(80, 71, 75);
 }
 
+/*VIEWER*/
+iframe {
+	width: 100%!important;
+	height: 100%!important;
+}
