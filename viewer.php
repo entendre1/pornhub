@@ -37,8 +37,6 @@ if ($result["status"] == "error"){
 		</div>-->
 		<?
 		echo html_entity_decode($embed);
-		 //print $embed; 
-		 
 		 ?>
 	</div>
 </body>
