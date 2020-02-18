@@ -21,7 +21,7 @@
             return (string)$result;
         }
         private function randomPage(){
-            $result = rand(1,10);
+            $result = rand(1,100);
             return (int)$result;
         }
 
@@ -56,7 +56,7 @@
                 );
             }
             
-            $video = $results->videos[0];
+            $video = $results->videos[array_rand($results->videos)];
             $embed = $PORNHUB->getVideoEmbedCode($video->video_id);
             
             $this->$response = new Response ("success", $embed->embed->code, null);
