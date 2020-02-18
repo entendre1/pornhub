@@ -8,8 +8,9 @@ html{
   	overflow-x: none;
 }
 body{
-	background-color:white;
+	background-color: rgb(40, 31, 35);
 	margin-bottom: 60px;
+	color: white;
 }
 a:hover {
 	text-decoration: none;
@@ -69,9 +70,7 @@ a:hover {
 	}
 }
 .b-md-4{
-	background-color:white;
-	color:rgb(80,80,80);
-	padding-bottom: 10px;
+	padding: 10px;
 	margin: 10px;
 	border-radius: 10px;
 	text-align: center;
@@ -84,9 +83,42 @@ a:hover {
 	transform: translateY(-20px);
 }
 .b-md-4:hover{
-	box-shadow: 0 0 15px rgba(200, 200, 200, 1);
+	box-shadow: 0 0 5px rgba(200, 200, 200, 1);
 }
 
+@media(max-width: 800px){
+	.step{
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -40%);
+		left: 10;
+		right: 10;
+	}
+}
+@media(min-width: 800px){
+	.step{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+.go-btn{
+	padding: 2px;
+	position: fixed;
+	z-index: 10;
+	bottom: 10px;
+	right: 10px;
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+}
+.btn{
+ 	margin:10px;
+}
+.hidden{
+	visibility: none;
+}
 .player{
 	background-color: rgb(40, 31, 35);
 	color: white;
