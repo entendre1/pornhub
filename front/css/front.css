@@ -1,0 +1,144 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'SFUIDisplay';
+}
+body{
+    position: relative;
+    background: black;
+}
+
+
+
+
+/*FOOTER
+#footer{
+    height: 150px;
+    width: 100%;
+    background: #1b1b1b;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding: 10px 20px 10px 20px;
+    display: none!important;
+    flex-direction: column;
+    color: white;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    
+}
+#find-btn{
+
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    
+}
+#cat-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space:nowrap;
+    box-sizing: border-box;
+}
+.cat-list-element{
+    margin: 5px 5px 5px 5px;
+    display: inline-block;
+    background: red;
+    box-sizing: border-box;
+    padding: 5px 5px 5px 5px;
+    margin-right: 10px;
+}
+*/
+/*HEADER*/
+#header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    height: 50px;
+    width: 100%;
+    background: #1b1b1b;
+}
+.control-group{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+.control{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: white;
+    transition: .5s;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    margin-right: 1rem; 
+    cursor: pointer;
+}
+.control:nth-last-child(){
+    margin-right: 0;
+}
+.control:hover{
+    background: white;
+    transition: .5s;
+    color: black;
+}
+/*LAUNCH*/
+#launch-btn{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+/*CONTENT*/
+#content{
+    height: auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.cat-list{
+    margin: 50px 10px 50px 10px;
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+}
+.cat{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    margin-right: 20px;
+    padding: 12px 12px 12px 12px;
+    background: #1b1b1b;
+    margin-bottom: 20px; 
+    border-radius: 5px;
+    transition: .35s;
+}
+.cat-choosen{
+    background: red;
+    transition: .35s;
+}
+.hidden{
+    display: none!important;
+}
