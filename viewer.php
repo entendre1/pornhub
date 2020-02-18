@@ -2,7 +2,8 @@
 error_reporting(0);
 include './api/apilib.php';
 include './api/actions/random.php';
-$Random = new Random($_GET);
+
+$Random = new Random($_POST);
 
 $result = $Random->Response()->getData();
 if ($result["status"] == "success"){
@@ -37,7 +38,6 @@ if ($result["status"] == "error"){
 		<?
 		echo html_entity_decode($embed);
 		 //print $embed; 
-		 
 		 
 		 ?>
 	</div>
