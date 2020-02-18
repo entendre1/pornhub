@@ -1,4 +1,5 @@
 <?
+error_reporting(0);
 include './api/apilib.php';
 include './api/actions/random.php';
 $Random = new Random($_GET);
