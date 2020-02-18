@@ -1,11 +1,8 @@
 <?
 include './api/apilib.php';
 include './api/actions/random.php';
-<<<<<<< HEAD
+
 $Random = new Random($_POST);
-=======
-$Random = new Random($_GET);
->>>>>>> 23c1ee48c215a3b54472a8f3923c5056a76ea376
 
 $result = $Random->Response()->getData();
 if ($result["status"] == "success"){
