@@ -26,7 +26,8 @@ function cat_clicked(cat){
 }
 
 function viewer(cat){
-	$.redirect('/viewer.php', {'included_cats': cat});
+	if(cat == "all")
+	$.redirect('/viewer.php', {});
 }
 
 function viewer(){
