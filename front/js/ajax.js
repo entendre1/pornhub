@@ -3,11 +3,7 @@ $('#step_2_c').hide();
 $('#step_2_g').hide();
 $('#step_2_l').hide();
 
-var cats = new Map([
-  ['anal', false],
-  ['creampie', false],
-  ['cartoon', false]
-]);  
+var cats = new Map([['anal', false]]);  
 
 
 function not_18(){
@@ -22,7 +18,7 @@ function next_step(step, step_prev){
 function cat_clicked(cat){
 	if(!cats[cat]){
 		cats[cat] = true;
-		$('#'+cat).css('border', 'solid 2px white');
+		$('#'+cat).css('border', 'solid 1px white');
 	}else{
 		cats[cat] = false;
 		$('#'+cat).css('border', 'none');
@@ -45,4 +41,8 @@ function viewer(){
 	str_query = query.join();
 
 	$.redirect('/viewer.php', {'included_cats': str_query});
+}
+
+function createMap(){
+
 }

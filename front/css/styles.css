@@ -153,6 +153,7 @@ a:hover {
 	top: 0px;
 	left: 10px;
 	color: white;
+	z-index: 10;
 }
 .back-button:hover{
 	color:rgb(80, 71, 75);

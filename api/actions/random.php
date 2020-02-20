@@ -9,7 +9,7 @@
         public static $actionName = "search";
         private const PAGES_LIMIT = 10;
         private $library = array(
-            'hentai','anal','creampie','cartoon','gay'
+            'hentai'
         );
         private function randomCat($exclude = array()){
             $cats = array_diff($this->library,$exclude);
@@ -50,10 +50,19 @@
                 );
             }else if (isset($data["included_cats"])){
                 //included
-                $results = $PORNHUB->searchVideos(
-                    $this->randomPage(),
-                    $this->randomCatFrom(explode(',',$data["included_cats"]))
-                );
+                if($data["included_cats"] == "all"){
+                    $j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' ); 
+                    $d = json_decode($j);
+                    $results = $PORNHUB->searchVideos(
+                        $this->randomPage(),
+                        $this->randomCatFrom($d->{"all"})
+                    );
+                }else{
+                    $results = $PORNHUB->searchVideos(
+                        $this->randomPage(),
+                        $this->randomCatFrom(explode(',',$data["included_cats"]))
+                    );
+                }
             }
             
             $video = $results->videos[array_rand($results->videos)];
