@@ -8,9 +8,9 @@
           }
         public static $actionName = "search";
         private const PAGES_LIMIT = 10;
-        private $j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' ); 
-        private $d = json_decode($j);
-        private $library = $d->{"all"};
+        private static $j; 
+        private $d;
+        private $library;
         private function randomCat($exclude = array()){
             $cats = array_diff($this->library,$exclude);
             $result = $cats[array_rand($cats)];
@@ -29,9 +29,9 @@
 
         public function __construct($data){
 
-
+            $this->library = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data'))->all;
             $PORNHUB = new PornhubApi();
-            
+
             if(isset($data["excluded_cats"]) && isset($data["included_cats"])){
                 //?) error
                 $this->$response = new Response ("error", null, "wtf_incompatible_params");
