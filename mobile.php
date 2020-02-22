@@ -1,6 +1,6 @@
 <?
-
-
+$lang = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/front/lang/ru_RU.local'));
+$library = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data'))->popularClassic;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="header"> 
-        <div class="navbar-brand">PornHub Randomizer</div>
+        <div class="navbar-brand"><? echo $lang->service->brand ?></div>
         <div class="control-group">
             <div class="control">Control 1</div>
             <div class="control">Control 2</div>
@@ -23,14 +23,14 @@
     </div>
     <div id="content"> 
         <div class="content-header">
-            <h1>Choose your categories</h1>
+            <h1><? echo $lang->service->{"choose-cats"}; ?></h1>
         </div>
         <div class="cat-list">
-            <div class="cat" data-category="hentai">Hentai</div>
-            <div class="cat" data-category="anal">Anal</div>
-            <div class="cat" data-category="creampie">Creampie</div>
-            <div class="cat" data-category="cartoon">Cartoon</div>
-            <div class="cat" data-category="gay">Gay</div>
+            <?
+                foreach ($library as $entry) {
+                echo '<div class="cat" data-category="'.$entry.'">'.$lang->categories->$entry.'</div>';      
+                }
+                ?>
         </div>
     </div>
     <div id="footer">

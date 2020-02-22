@@ -164,3 +164,6 @@ iframe {
 	width: 100%!important;
 	height: 100%!important;
 }
+.hidden{
+    display: none!important;
+}

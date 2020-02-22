@@ -134,6 +134,7 @@ body{
     margin-bottom: 20px; 
     border-radius: 5px;
     transition: .35s;
+    cursor: pointer;
 }
 .cat-choosen{
     background: red;

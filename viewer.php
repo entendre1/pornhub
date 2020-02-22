@@ -12,32 +12,33 @@ if ($result["status"] == "success"){
 if ($result["status"] == "error"){
 	$embed = $result["description"];
 }
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>rhub.dev - view</title>
+	<title>RHub|Player</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<!--<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+	<!--<script>
+		var included_cats = '<? //if (isset($_POST["included_cats"])){echo html_entity_decode($_POST["included_cats"]);} else {echo null;} ?>';
+	</script>
+	<script src="./front/js/viewer.js"></script>-->
+	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
 	<link rel="stylesheet" href="/front/css/styles.css">
 	<script src="https://kit.fontawesome.com/581d130f1d.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="player">
-		<!--<a href="/" ><div class="back-button"><i class="fas fa-arrow-left"></i></div></a>
-		<div class="views"><i class="fas fa-eye"></i>34K</div>
-		<div class="muted-button"><i class="fas fa-volume-mute"></i> <i class="fas fa-cog"></i> <i class="fas fa-volume-up"></i></div>
-		<div class="timeline">
-			<span class="play-button"><i class="fas fa-play"></i>\<i class="fas fa-pause"></i></span> .________________________________________________________________________
-		</div>-->
 		<?
 		echo html_entity_decode($embed);
 		 ?>
 	</div>
+	<div id="footer"><div class="reload-btn">Перезагрузить</div></div>
+	<form id="launch-form" action="viewer.php" method="post" target="_self" class="hidden">
+        <input id="launch-input" type="hidden">
+    </form>
 </body>
 </html>

@@ -4,8 +4,7 @@
 
 	if ($detect->isMobile()){
 		include 'mobile.php';
-	}
-	if (!$detect->isMobile()){
+	}else{
 		include 'pc.php';
 	}
 
