@@ -18,10 +18,10 @@ function next_step(step, step_prev){
 function cat_clicked(cat){
 	if(!cats[cat]){
 		cats[cat] = true;
-		$('#'+cat).css('border', 'solid 1px white');
+		$('#'+cat).css('background-color', 'red');
 	}else{
 		cats[cat] = false;
-		$('#'+cat).css('border', 'none');
+		$('#'+cat).css('background-color', '');
 	}
 }
 

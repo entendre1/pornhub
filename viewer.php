@@ -30,15 +30,13 @@ if ($result["status"] == "error"){
 	<link rel="stylesheet" href="/front/css/styles.css">
 	<script src="https://kit.fontawesome.com/581d130f1d.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="margin:0px; height: 100vh; width: 100vw; padding: 0px;">
+	<button class="btn btn-default d-fixed btn-xs re-btn"><i class="fas fa-dice fa-2x"></i></button>
+
 	<div class="player">
 		<?
 		echo html_entity_decode($embed);
 		 ?>
 	</div>
-	<div id="footer"><div class="reload-btn">Перезагрузить</div></div>
-	<form id="launch-form" action="viewer.php" method="post" target="_self" class="hidden">
-        <input id="launch-input" type="hidden">
-    </form>
 </body>
 </html>

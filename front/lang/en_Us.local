@@ -1,4 +1,18 @@
 {
+	    "service":{
+            "choose-cats":"Chose categories",
+            "brand":"Pornhub Randomizer",
+            "more":"More",
+            "less":"Less",
+            "18-question":"Are you 18+ years old?",
+            "yes":"Yes",
+            "no":"No",
+            "absolutely-random":"Absolutely Random",
+            "classic":"Classic",
+            "gay":"Gay",
+            "most-popular":"Most popular:"
+        },
+"categories":{
 	"180-1": "180",
 	"2d": "2d",
 	"360-1": "360",
@@ -205,4 +219,5 @@
 		"vr-gay": "vr",
 		"webcam-gay": "webcam"
 	}
+}
 }
