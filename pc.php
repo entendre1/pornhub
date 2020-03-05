@@ -1,11 +1,3 @@
-<?	
-	$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-	if($lang == "ru")
-		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/front/lang/ru_RU.local' ); 
-	else
-		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/front/lang/en_US.local' ); 
-	$local = json_decode($j);
-?>
 <!DOCTYPE html>
 <html>
 <head>

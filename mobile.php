@@ -1,5 +1,4 @@
 <?
-$lang = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/front/lang/ru_RU.local'));
 $library = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data'))->popularClassic;
 ?>
 <!DOCTYPE html>
@@ -15,7 +14,7 @@ $library = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.da
 </head>
 <body>
     <div id="header"> 
-        <div class="navbar-brand"><? echo $lang->service->brand ?></div>
+        <div class="navbar-brand"><? echo locale('brand','PHRand','service');?></div>
         <div class="control-group">
             <div class="control">Control 1</div>
             <div class="control">Control 2</div>
@@ -23,12 +22,12 @@ $library = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.da
     </div>
     <div id="content"> 
         <div class="content-header">
-            <h1><? echo $lang->service->{"choose-cats"}; ?></h1>
+            <h1><? echo locale('choose-cats','Выберите категории','service'); ?></h1>
         </div>
         <div class="cat-list">
             <?
                 foreach ($library as $entry) {
-                echo '<div class="cat" data-category="'.$entry.'">'.$lang->categories->$entry.'</div>';      
+                echo '<div class="cat" data-category="'.$entry.'">'.locale($entry,'Категория','categories').'</div>';      
                 }
                 ?>
         </div>
@@ -47,7 +46,7 @@ $library = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.da
         </div>
 
     </div>
-    <div id="launch-btn" style="display:none;">L</div>
+    <div id="launch-btn" style="display:none;">O</div>
     <form id="launch-form" action="viewer.php" method="post" target="_blank" class="hidden">
         <input id="launch-input" type="hidden">
     </form>

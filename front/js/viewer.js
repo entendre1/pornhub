@@ -1,4 +1,4 @@
-$(document).on('click',document,function(){
+$(document).on('click','#re-btn',function(){
     if (included_cats){
         $('#launch-input').attr('name','included_cats');
         $('#launch-input').attr('value',included_cats);
