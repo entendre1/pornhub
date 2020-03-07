@@ -11,7 +11,15 @@ function not_18(){
 }
 
 function next_step(step, step_prev){
-	$('#'+step).show();
+	if(step == "allB")
+		$('#lessB').hide("slow");
+	if(step == "other")
+		$('#lessB').show("slow");
+	if(step == "allB1")
+		$('#lessB1').hide("slow");
+	if(step == "other1")
+		$('#lessB1').show("slow");
+	$('#'+step).show("slow");
 	$('#'+step_prev).hide();
 }
 
@@ -42,8 +50,4 @@ function viewer(){
 	str_query = query.join();
 
 	$.redirect('/viewer.php', {'included_cats': str_query});
-}
-
-function createMap(){
-
 }
