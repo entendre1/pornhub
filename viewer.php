@@ -11,7 +11,6 @@ if ($result["status"] == "success"){
 if ($result["status"] == "error"){
 	$embed = $result["description"];
 }
-var_dump('HUI');
 ?>
 
 <!DOCTYPE html>

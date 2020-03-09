@@ -65,7 +65,6 @@
 
             $this->library = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data'))->all;
             $PORNHUB = new PornhubApi();
-
             if(isset($data["excluded_cats"]) && isset($data["included_cats"])){
                 //?) error
                 $this->$response = new Response ("error", null, "wtf_incompatible_params");
@@ -76,6 +75,7 @@
                     $this->randomPage(),
                     $this->randomCat()
                 );
+                
             }else if (isset($data["excluded_cats"])){
                 //excluded
                 $results = $PORNHUB->searchVideos(
@@ -88,6 +88,7 @@
                         $this->randomPage(),
                         $this->randomCatFrom(explode(',',$data["included_cats"]))
                     );
+                    
             }
             
             $video = $results->videos[array_rand($results->videos)];
