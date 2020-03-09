@@ -1,5 +1,10 @@
 <?
 use Noxyra\PornhubApi\Api\PornhubApi as PornhubApi;
+/**
+ * API METHOD: Categories
+ * Can be called by: 'cats'
+ * 
+ */
 class Categories extends Action implements IAction{
     public function vardump($var) {
         echo '<pre>';
@@ -7,6 +12,11 @@ class Categories extends Action implements IAction{
         echo '</pre>';
       }
     public static $actionName = 'cats';
+
+    /**
+     * Constructor: Categories
+     * 
+     */
     public function __construct($DATA){
         $PORNHUB = new PornhubApi();
         $res = array();

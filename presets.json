@@ -1,0 +1,15 @@
+[
+    {
+        "name":"cartooner",
+        "name_locale":{
+            "ru":"Мульты",
+            "en":"Cartooner"
+        },
+        "description":{
+            "ru":"Мульты и Хентай",
+            "en":"Cartoons and Hentai"
+        },
+        "type":"including",
+        "cats":["hentai","cartoon"]
+    }
+]

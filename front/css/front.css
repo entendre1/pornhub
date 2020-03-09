@@ -1,3 +1,11 @@
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
 html,body{
     width: 100%;
     height: 100%;
@@ -8,56 +16,10 @@ body{
     position: relative;
     background: black;
 }
-
-
-
-
-/*FOOTER
-#footer{
-    height: 150px;
-    width: 100%;
-    background: #1b1b1b;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    padding: 10px 20px 10px 20px;
+.hidden{
     display: none!important;
-    flex-direction: column;
-    color: white;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    
 }
-#find-btn{
 
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
-    
-}
-#cat-list{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 50px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space:nowrap;
-    box-sizing: border-box;
-}
-.cat-list-element{
-    margin: 5px 5px 5px 5px;
-    display: inline-block;
-    background: red;
-    box-sizing: border-box;
-    padding: 5px 5px 5px 5px;
-    margin-right: 10px;
-}
-*/
 /*HEADER*/
 #header{
     display: flex;
@@ -83,6 +45,12 @@ body{
     padding-right: .5rem;
     margin-right: 1rem; 
     cursor: pointer;
+    text-decoration: none;
+}
+.control a{
+    color: inherit;
+    outline: none;
+    text-decoration: none!important;
 }
 .control:nth-last-child(){
     margin-right: 0;
@@ -92,6 +60,8 @@ body{
     transition: .5s;
     color: black;
 }
+
+
 /*LAUNCH*/
 #launch-btn{
     width: 70px;
@@ -108,8 +78,43 @@ body{
     font-weight: 800;
     font-size: 1.5rem;
 }
+/* PRESET LAUNCH */
+#preset-launch-btn{
+    z-index: 100;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
 
 /*CONTENT*/
+.button{
+    width: 80%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1b1b1b;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: .35s;
+}
+.button-choosen{
+    background: red;
+    transition: .35s;
+}
+
 #content{
     height: auto;
     color: white;
@@ -136,10 +141,96 @@ body{
     transition: .35s;
     cursor: pointer;
 }
+.cat::selection{
+    background: none;
+}
 .cat-choosen{
     background: red;
     transition: .35s;
 }
-.hidden{
-    display: none!important;
+
+
+
+
+/* PRESETS */
+.presets{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
+.preset{
+    display: flex;
+    color: white;
+    margin-right: 10px;
+    padding: 12px 12px 12px 12px;
+    background: #1b1b1b;
+    margin-bottom: 20px; 
+    border-radius: 5px;
+    transition: .35s;
+    cursor: pointer;
+
+}
+.preset::selection{
+    background: none;
+}
+.preset-choosen{
+    background: red;
+    transition: .35s;
+}
+.modal{
+    padding: 10px 20px;
+}
+.modal p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+}
+#tooltip {
+    background: red;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 20px;
+    display: none;
+    animation: fadeout 0.3s;
+  }
+
+  #tooltip[data-show] {
+    animation: fadein 0.3s;
+    display: block;
+  }
+
+  #arrow,
+  #arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    z-index: -1;
+  }
+
+  #arrow::before {
+    content: '';
+    transform: rotate(45deg);
+    background: red;
+  }
+
+  #tooltip[data-popper-placement^='top'] > #arrow {
+    bottom: -4px;
+  }
+
+  #tooltip[data-popper-placement^='bottom'] > #arrow {
+    top: -4px;
+  }
+
+  #tooltip[data-popper-placement^='left'] > #arrow {
+    right: -4px;
+  }
+
+  #tooltip[data-popper-placement^='right'] > #arrow {
+    left: -4px;
+  }
+  .ui-loader{
+      display: none!important;
+  }

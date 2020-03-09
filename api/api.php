@@ -1,4 +1,10 @@
 <?
+/**
+ * RadioNurshat API
+ * Based on IXHUB
+ * @version 1.2.2
+ *  
+ */
 header('Content-Type: text/html; charset=utf-8');
 include 'apilib.php';
 

@@ -3,8 +3,7 @@ error_reporting(0);
 include './api/apilib.php';
 include './api/actions/random.php';
 
-$Random = new Random($_POST);
-
+$Random = new Random($DATA);
 $result = $Random->Response()->getData();
 if ($result["status"] == "success"){
 	$embed = $result["data"];
@@ -12,6 +11,7 @@ if ($result["status"] == "success"){
 if ($result["status"] == "error"){
 	$embed = $result["description"];
 }
+var_dump('HUI');
 ?>
 
 <!DOCTYPE html>

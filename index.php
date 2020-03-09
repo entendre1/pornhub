@@ -1,7 +1,10 @@
 <?
+	$DEFAULT_LANG = 'en';
+	
+	$SITE_LANG = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+	
 
-	$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-	switch ($lang) {
+	switch ($SITE_LANG) {
 		case 'ru':
 			$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/front/lang/ru_RU.local' );
 			break;

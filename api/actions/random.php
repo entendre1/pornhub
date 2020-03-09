@@ -1,27 +1,61 @@
 <?
     use Noxyra\PornhubApi\Api\PornhubApi as PornhubApi;
+    /** 
+     * API Method - Random
+     * Return Embed code of random video choosen from given categories
+     * @version 1.0.12
+     */
     class Random extends Action implements IAction{
         private function vardump($var) {
             echo '<pre>';
             var_dump($var);
             echo '</pre>';
           }
+        /**
+         * Action is being called by this name
+         */
         public static $actionName = "search";
-        private const PAGES_LIMIT = 10;
+        
+        /**
+         * Limit for the first N pages randomizer chooses from
+         */
+        private const PAGES_LIMIT = 100;
+
         private static $j; 
         private $d;
+
+        /**
+         * List of all existing categories
+         */
         private $library;
+        
+        /**
+         * Chooses random category from categories in $library
+         * @param array $exclude If given, this categories exclude from library
+         * @return string Category 
+         */
         private function randomCat($exclude = array()){
             $cats = array_diff($this->library,$exclude);
             $result = $cats[array_rand($cats)];
             return (string)$result;
         }
+
+        /**
+         * Chooses random category from categories in given library
+         * @param array $include Categories is being choosen from this array
+         * @return string Category 
+         */
         private function randomCatFrom($include){
             $result = $include[array_rand($include)];
             return (string)$result;
         }
+
+        /**
+         * Returns random page number from 0 to PAGE_LIMIT
+         * @return string Category 
+         */
         private function randomPage(){
-            $result = rand(1,100);
+            $result = rand(1,PAGES_LIMIT);
             return (int)$result;
         }
 
