@@ -8,7 +8,7 @@ html{
   	min-height: 100%;
 }
 body{
-	background-color: rgb(20, 11, 15);
+	background-color: rgb(40, 31, 35);
 	color: white;
 }
 a:hover {
@@ -33,13 +33,16 @@ a:hover {
 	margin: 10px;
 	border-radius: 10px;
 	text-align: center;
+    transition: 0.5s;
+}
+.b-md-4 > p > i{
+	transition: 0.5s;
+}
+.b-md-4:hover > p > i{
+	transform: translateY(-20px);
 }
 .b-md-4:hover{
-	/*box-shadow: 0 0 5px rgba(200, 200, 200, 1);*/
-	color: rgb(160, 151, 155);
-}
-#step_2_c, #step_2_g{
-	padding-top: 20px;
+	box-shadow: 0 0 5px rgba(200, 200, 200, 1);
 }
 .go-btn{
 	padding: 2px;
@@ -47,12 +50,9 @@ a:hover {
 	z-index: 10;
 	bottom: 10px;
 	right: 10px;
-	min-width: 80px;
-	min-height: 80px;
-	width: 6vw;
-	height: 6vw;
-	border:none;
-	border-radius: 50vw;
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
 }
 .re-btn{
 	padding: 2px;
@@ -65,8 +65,7 @@ a:hover {
 	border:none;
 	border-radius: 40px;
 }
-.re-btn:hover, .go-btn:hover{
-	transition: 0.5s;
+.re-btn:hover{
 	color:white;
 	background-color: rgb(70, 61, 65);
 }
@@ -85,7 +84,7 @@ a:hover {
 	float: left;
 	display: block;
 	position: absolute;
-	top: 20px;
+	top: 0px;
 	left: 10px;
 	color: white;
 	z-index: 10;
