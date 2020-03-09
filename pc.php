@@ -38,22 +38,24 @@
 			</div>
 		</div>
 		<div id="step_2_c" style="display: none;">
-			<div class="row justify-content-center">
+			<div class="row  justify-content-center align-items-center" style="height: calc(100vh - 20px);">
 		    	<button class="btn back-button" onclick='next_step("step_1","step_2_c")'><i class="fas fa-arrow-left fa-2x"></i></button>
-		    	<div class="col-md-12 block h2 text-center"><?=$local->service->{"most-popular"}?></div>
-		    	<div class="row col-md-12 justify-content-center">
-			    	<?
-			    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' ); 
-						$data = json_decode($j);
-						for($i = 0; isset($data->{"popularClassic"}[$i]); $i++){
-							echo '<div id="'.$data->{"popularClassic"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularClassic"}[$i].'")\'>'.$local->{"categories"}->{$data->{"popularClassic"}[$i]}.'</div>';
-						}
-					?>
+		    	<div class="row  justify-content-center align-items-center" style="height: calc(100vh - 20px);">
+			    	<div class="col-md-12 block h2 text-center"><?=$local->service->{"most-popular"}?></div>
+			    	<div class="row col-md-12 justify-content-center">
+				    	<?
+				    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' ); 
+							$data = json_decode($j);
+							for($i = 0; isset($data->{"popularClassic"}[$i]); $i++){
+								echo '<div id="'.$data->{"popularClassic"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularClassic"}[$i].'")\'>'.$local->{"categories"}->{$data->{"popularClassic"}[$i]}.'</div>';
+							}
+						?>
+					</div>
+					<button id="allB" class="btn btn-light btn-lg col-md-6" onclick='next_step("other", "allB")'><?=$local->service->more?></button>
+					<button id="lessB" style="display: none;" class="btn btn-light btn-lg col-md-6" onclick='next_step("allB", "other")'><?=$local->service->less?></button>
 				</div>
-				<button id="allB" class="btn btn-light btn-lg col-md-6" onclick='next_step("other", "allB")'><?=$local->service->more?></button>
-				
-				<div id="other" class="row col-md-12 justify-content-center" style="display: none">
-					<button class="btn btn-light btn-lg col-md-6" onclick='next_step("allB", "other")'><?=$local->service->less?></button>
+
+				<div id="other" class="row col-md-12 justify-content-center" style="display: none;transition: 0.5s;">
 					<div class="col-md-12"></div>
 					<div class="row text-center justify-content-center">
 					<?
@@ -71,25 +73,27 @@
 					</div>
 				</div>
 		     	<button class="btn btn-light d-fixed go-btn" onclick='viewer()'><h1>Go!</h1></button>
-			</div>
+		    </div>	
 		</div>
 		<div id="step_2_g" style="display: none;">
 			<div class="row justify-content-center">
 		    	<button class="btn back-button" onclick='next_step("step_1","step_2_g")'><i class="fas fa-arrow-left fa-2x"></i></button>
-		    	<div class="col-md-10 block h2 text-center"><?=$local->service->{"most-popular"}?></div>
-		    	<div class="row col-md-12 justify-content-center">
-		    	<?
-		    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' ); 
-					$data = json_decode($j);
-					for($i = 0; isset($data->{"popularGay"}[$i]); $i++){
-						echo '<div id="'.$data->{"popularGay"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularGay"}[$i].'")\'>'.$local->{"categories"}->{"Gay"}->{$data->{"popularGay"}[$i]}.'</div>';
-					}
-				?>
+			    <div class="row  justify-content-center align-items-center" style="height: calc(100vh - 20px);">	
+			    	<div class="col-md-10 block h2 text-center"><?=$local->service->{"most-popular"}?></div>
+			    	<div class="row col-md-12 justify-content-center">
+			    	<?
+			    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' ); 
+						$data = json_decode($j);
+						for($i = 0; isset($data->{"popularGay"}[$i]); $i++){
+							echo '<div id="'.$data->{"popularGay"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularGay"}[$i].'")\'>'.$local->{"categories"}->{"Gay"}->{$data->{"popularGay"}[$i]}.'</div>';
+						}
+					?>
+					</div>
+					<button id="allB1" class="btn btn-light btn-lg col-md-6" onclick='next_step("other1", "allB1")'><?=$local->service->more?></button>
+					<button id="lessB1" style="display: none;" class="btn btn-light btn-lg col-md-6" onclick='next_step("allB1", "other1")'><?=$local->service->less?></button>
 				</div>
-				<button id="allB1" class="btn btn-light btn-lg col-md-6" onclick='next_step("other1", "allB1")'><?=$local->service->more?></button>
 				
 				<div id="other1" class="row col-md-12 justify-content-center" style="display: none">
-					<button class="btn btn-light btn-lg col-md-6" onclick='next_step("allB1", "other1")'><?=$local->service->less?></button>
 					<div class="col-md-12"></div>
 					<div class="row text-center justify-content-center">
 					<?
