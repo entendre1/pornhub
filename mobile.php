@@ -66,7 +66,7 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
         <div class="cat-list" id="featured_list">
             <?
                 foreach ($featured as $entry) {
-                echo '<div class="cat" data-category="'.$entry.'">'.locale($entry,'Категория','categories').'</div>';      
+                echo '<div class="cat" data-category="'.$entry.'">'.locale($entry,$entry,'categories').'</div>';      
                 }
                 unset($entry);
             ?>
@@ -74,7 +74,7 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
         <div class="cat-list" id="all_list" style="display: none;">
             <?
                 foreach ($all as $entry) {
-                echo '<div class="cat" data-category="'.$entry.'">'.locale($entry,'Категория','categories').'</div>';      
+                echo '<div class="cat" data-category="'.$entry.'">'.locale($entry,$entry,'categories').'</div>';      
                 }
             ?>
         </div>
