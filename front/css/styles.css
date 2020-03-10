@@ -1,6 +1,5 @@
 /*-----------basic-----------*/
 *{
-	transition: 0.5s;
 	overflow-x: none;
 }
 html{
@@ -33,6 +32,7 @@ a:hover {
 	margin: 10px;
 	border-radius: 10px;
 	text-align: center;
+	transition: 0.5s;
 }
 .b-md-4:hover{
 	/*box-shadow: 0 0 5px rgba(200, 200, 200, 1);*/
@@ -53,6 +53,7 @@ a:hover {
 	height: 6vw;
 	border:none;
 	border-radius: 50vw;
+	transition: 0.5s;
 }
 .re-btn{
 	padding: 2px;
@@ -64,9 +65,10 @@ a:hover {
 	height: 40px;
 	border:none;
 	border-radius: 40px;
+	transition: 0.5s;
 }
 .re-btn:hover, .go-btn:hover{
-	transition: 0.5s;
+
 	color:white;
 	background-color: rgb(70, 61, 65);
 }

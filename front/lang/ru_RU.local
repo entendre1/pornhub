@@ -10,7 +10,8 @@
             "absolutely-random":"Абсолютно случайно",
             "classic":"Классика",
             "gay":"гей",
-            "most-popular":"Наиболее популярное:"
+            "most-popular":"Наиболее популярное:",
+            "all":"Все"
         },
         "categories":{
             "teen":"Молодые",

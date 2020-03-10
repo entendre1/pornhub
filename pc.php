@@ -43,9 +43,9 @@
 		    	<div class="row  justify-content-center align-items-center" style="height: calc(100vh - 20px);">
 			    	<div class="col-md-12 block h2 text-center"><?=$local->service->{"most-popular"}?></div>
 			    	<div class="row col-md-12 justify-content-center">
-				    	<?
+			    	<?
 				    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' ); 
-							$data = json_decode($j);
+				    		$data = json_decode($j);
 							for($i = 0; isset($data->{"popularClassic"}[$i]); $i++){
 								echo '<div id="'.$data->{"popularClassic"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularClassic"}[$i].'")\'>'.$local->{"categories"}->{$data->{"popularClassic"}[$i]}.'</div>';
 							}
@@ -82,7 +82,7 @@
 			    	<div class="col-md-10 block h2 text-center"><?=$local->service->{"most-popular"}?></div>
 			    	<div class="row col-md-12 justify-content-center">
 			    	<?
-			    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' ); 
+			    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' );
 						$data = json_decode($j);
 						for($i = 0; isset($data->{"popularGay"}[$i]); $i++){
 							echo '<div id="'.$data->{"popularGay"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularGay"}[$i].'")\'>'.$local->{"categories"}->{"Gay"}->{$data->{"popularGay"}[$i]}.'</div>';
