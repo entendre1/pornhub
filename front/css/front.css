@@ -234,3 +234,14 @@ body{
   .ui-loader{
       display: none!important;
   }
+  /* NO PRESETS */
+  .control-group{
+      display: none;
+  }
+  #header{
+      display: flex;
+      justify-content: start;
+  }
+  .navbar-brand{
+      margin-left: 10%;
+  }

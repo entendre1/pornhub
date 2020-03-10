@@ -40,9 +40,6 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
                 echo "<div class=\"preset\" aria-describedby=\"tooltip\" data-description='".$preset->description->{$LANG}."' data-type='".$preset->type."' data-cats='".implode(',',$preset->cats)."'><span>".$preset->name_locale->{$LANG}."</span></div>";
             }
         ?>
-        <div class="preset">Preset 1</div>
-        <div class="preset">Preset 2</div>
-        <div class="preset">Preset 3</div>
         <div id="tooltip" role="tooltip">
             <span id="tooltip_text">My tooltip</span>
             <div id="arrow" data-popper-arrow></div>
@@ -58,7 +55,7 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
         <div class="navbar-brand"><? echo locale('brand','PHRand','service');?></div>
         <div class="control-group">
             <a class="control" href='#presets' rel="modal:open" ><? echo locale('presets','Пресеты','service'); ?></a>
-            <a class="control" id="help">Помощь</a>
+            <a class="control" id="help"><? echo locale('help','Помощь  ','service'); ?></a>
         </div>
     </div>
     <div id="content"> 

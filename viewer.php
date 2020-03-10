@@ -2,8 +2,7 @@
 error_reporting(0);
 include './api/apilib.php';
 include './api/actions/random.php';
-
-$Random = new Random($DATA);
+$Random = new Random($_POST);
 $result = $Random->Response()->getData();
 if ($result["status"] == "success"){
 	$embed = $result["data"];

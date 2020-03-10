@@ -55,7 +55,7 @@
          * @return string Category 
          */
         private function randomPage(){
-            $result = rand(1,PAGES_LIMIT);
+            $result = rand(1,Random::PAGES_LIMIT);
             return (int)$result;
         }
 
