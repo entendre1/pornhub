@@ -7,6 +7,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="front/fonts/SF Display/SFUIDisplay.css">
 	<link rel="stylesheet" href="/front/css/styles.css">
 	<script src="https://kit.fontawesome.com/581d130f1d.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery.redirect@1.1.4/jquery.redirect.min.js"></script>
@@ -46,20 +47,20 @@
 			    	<?
 				    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' ); 
 				    		$data = json_decode($j);
+				    		echo '<div id="all_classic" class="b-md-4 h3 block" onclick=\'cat_all("classic")\'>'.$local->service->all.'</div>';
 							for($i = 0; isset($data->{"popularClassic"}[$i]); $i++){
 								echo '<div id="'.$data->{"popularClassic"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularClassic"}[$i].'")\'>'.$local->{"categories"}->{$data->{"popularClassic"}[$i]}.'</div>';
 							}
 						?>
 					</div>
-					<button id="allB" class="btn btn-light btn-lg col-md-6" onclick='next_step("other", "allB")'><?=$local->service->more?></button>
-					<button id="lessB" style="display: none;" class="btn btn-light btn-lg col-md-6" onclick='next_step("allB", "other")'><?=$local->service->less?></button>
+					<button id="allB" class="btn btn-light btn-lg col-md-6 more-btn" onclick='next_step("other", "allB")'><?=$local->service->more?></button>
+					<button id="lessB" style="display: none;" class="btn btn-light btn-lg col-md-6 more-btn" onclick='next_step("allB", "other")'><?=$local->service->less?></button>
 				</div>
-
 				<div id="other" class="row col-md-12 justify-content-center" style="display: none;transition: 0.5s;">
 					<div class="col-md-12"></div>
 					<div class="row text-center justify-content-center">
 					<?
-			    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' ); 
+			    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' );
 						$data = json_decode($j);
 						for($i = 0; isset($data->{"classic"}[$i]); $i++){
 							$duplicate = false;
@@ -84,13 +85,14 @@
 			    	<?
 			    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' );
 						$data = json_decode($j);
+						echo '<div id="all_gay" class="b-md-4 h3 block" onclick=\'cat_all("gay")\'>'.$local->service->all.'</div>';
 						for($i = 0; isset($data->{"popularGay"}[$i]); $i++){
 							echo '<div id="'.$data->{"popularGay"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularGay"}[$i].'")\'>'.$local->{"categories"}->{"Gay"}->{$data->{"popularGay"}[$i]}.'</div>';
 						}
 					?>
 					</div>
-					<button id="allB1" class="btn btn-light btn-lg col-md-6" onclick='next_step("other1", "allB1")'><?=$local->service->more?></button>
-					<button id="lessB1" style="display: none;" class="btn btn-light btn-lg col-md-6" onclick='next_step("allB1", "other1")'><?=$local->service->less?></button>
+					<button id="allB1" class="btn btn-light btn-lg col-md-6 more-btn" onclick='next_step("other1", "allB1")'><?=$local->service->more?></button>
+					<button id="lessB1" style="display: none;" class="btn btn-light btn-lg col-md-6 more-btn" onclick='next_step("allB1", "other1")'><?=$local->service->less?></button>
 				</div>
 				
 				<div id="other1" class="row col-md-12 justify-content-center" style="display: none">

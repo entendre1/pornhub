@@ -7,8 +7,9 @@ html{
   	min-height: 100%;
 }
 body{
-	background-color: rgb(20, 11, 15);
+	background-color: black;
 	color: white;
+	font-family: 'SFUIDisplay';
 }
 a:hover {
 	text-decoration: none;
@@ -33,10 +34,11 @@ a:hover {
 	border-radius: 10px;
 	text-align: center;
 	transition: 0.5s;
+	background: black;
 }
 .b-md-4:hover{
-	/*box-shadow: 0 0 5px rgba(200, 200, 200, 1);*/
-	color: rgb(160, 151, 155);
+	box-shadow: 0 0 5px rgba(247, 145, 0, 1);
+	/*color: rgb(160, 151, 155);*/
 }
 #step_2_c, #step_2_g{
 	padding-top: 20px;
@@ -67,10 +69,14 @@ a:hover {
 	border-radius: 40px;
 	transition: 0.5s;
 }
-.re-btn:hover, .go-btn:hover{
-
-	color:white;
-	background-color: rgb(70, 61, 65);
+.more-btn, .re-btn, .go-btn{
+	background: rgb(247, 145, 0);	
+	border:none;
+	color: black;
+}
+.re-btn:hover, .go-btn:hover, .more-btn:hover{
+	color: black;
+	background-color: rgba(247, 145, 0, 0.5);
 }
 .hidden{
 	visibility: none;
