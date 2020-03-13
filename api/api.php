@@ -1,7 +1,6 @@
 <?
 /**
- * RadioNurshat API
- * Based on IXHUB
+ * PHRandomizer API
  * @version 1.2.2
  *  
  */
