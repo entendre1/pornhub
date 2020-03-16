@@ -28,15 +28,32 @@ if ($result["status"] == "error"){
 	<link rel="stylesheet" href="/front/css/styles.css">
 	<script src="https://kit.fontawesome.com/581d130f1d.js" crossorigin="anonymous"></script>
 </head>
-<body style="margin:0px; height: 100vh; width: 100vw; padding: 0px;">
-	<button class="btn btn-default d-fixed btn-xs re-btn" id="re-btn"><i class="fas fa-dice fa-2x"></i></button>
+<body style="margin:0px; height: calc(100vh - 20px); width: 100vw; padding: 0px;">
+	<button class="btn btn-default d-fixed btn-xs re-btn" id="re-btn"><i class="fas fa-dice fa-3x"></i></button>
 	<form action="./viewer.php" class="hidden" id="launch-form" method="post">
 	<input type="hidden" id="launch-input" target="_self">
 	</form>
 	<div class="player">
 		<?
-		echo html_entity_decode($embed);
+		include('./lib/shd.php');
+		$options = array(
+		  'http'=>array(
+		    'method'=>"GET",
+		    'header'=>"Accept-language: ru\r\n" .
+		                "User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17\r\n" // i.e. An iPad 
+		  )
+		);
+
+		$context = stream_context_create($options);
+		$html = file_get_html('https://play.google.com/store/apps', false, $context);
+		foreach($html->find('a') as $element) {
+		    echo "<pre>";
+		    print_r( $element->href);
+		    echo "</pre>";
+		}
+		//echo html_entity_decode($embed);
 		 ?>
 	</div>
+	<script type="text/javascript">setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Safari/605.1.15');</script>
 </body>
 </html>
