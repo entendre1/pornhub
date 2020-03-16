@@ -35,23 +35,7 @@ if ($result["status"] == "error"){
 	</form>
 	<div class="player">
 		<?
-		include('./lib/shd.php');
-		$options = array(
-		  'http'=>array(
-		    'method'=>"GET",
-		    'header'=>"Accept-language: ru\r\n" .
-		                "User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17\r\n" // i.e. An iPad 
-		  )
-		);
-
-		$context = stream_context_create($options);
-		$html = file_get_html('https://play.google.com/store/apps', false, $context);
-		foreach($html->find('a') as $element) {
-		    echo "<pre>";
-		    print_r( $element->href);
-		    echo "</pre>";
-		}
-		//echo html_entity_decode($embed);
+		echo html_entity_decode($embed);
 		 ?>
 	</div>
 	<script type="text/javascript">setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Safari/605.1.15');</script>
