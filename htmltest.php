@@ -21,8 +21,9 @@ $opts = array('http' =>
                     'Connection: keep-alive'.
                     'Cookie: bs=mm5u9jkqdtb4mn0fkajgi758fypq5on3; ss=507611426022548199; lang=ru; RNLBSERVERID=ded6829; ua=97fc230848bc304ccee289a55f3e5339; platform_cookie_reset=pc; platform=pc'.
                     'DNT: 1'.
-                    'Host: www.pornhub.com'.
-                    'Referer: https://www.pornhub.com'.
+                    'Host: ce.phncdn.com'.
+                    'Referer: https://rt.pornhub.com'.
+                    'Accept-Encoding: identity'.
                     'Sec-Fetch-Dest: iframe'.
                     'Sec-Fetch-Mode: navigate'.
                     'Sec-Fetch-Site: cross-site'.
@@ -130,8 +131,8 @@ for ($i=0; $i<strlen($MP4480P); $i++){
         }
     }
 }
-$emit = substr($emit,8,count($emit)-8);
 
+$emit = explode('mp4480p=', $emit)[1];
 $patterns = explode(' + ',$emit);
 
 $url = '';
@@ -139,10 +140,8 @@ foreach ($patterns as $pattern) {
     $url.=$variables[$pattern];
 }
 
-vardump(urldecode($url));
+echo '<video src="'.$url.'" controls></video>';
 
 //ekho(htmlspecialchars($file));
-
-
 
 ?>
