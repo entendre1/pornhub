@@ -93,8 +93,14 @@
             
             $video = $results->videos[array_rand($results->videos)];
             $embed = $PORNHUB->getVideoEmbedCode($video->video_id);
-            
-            $this->$response = new Response ("success", $embed->embed->code, null);
+            $link = explode('"',html_entity_decode($embed->embed->code))[1];
+
+            $finale = array(
+                "link" => PHFK($link),
+                "thumbnail" => $video->default_thumb
+            );
+
+            $this->$response = new Response ("success", $finale, null);
         }
     }
 ?>  

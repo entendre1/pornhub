@@ -21,3 +21,5 @@ function setUserAgent(window, userAgent) {
         }
     }
 }
+
+const player = new Plyr('#main_player');

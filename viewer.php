@@ -5,10 +5,11 @@ include './api/actions/random.php';
 $Random = new Random($_POST);
 $result = $Random->Response()->getData();
 if ($result["status"] == "success"){
-	$embed = $result["data"];
+	$link = $result["data"]["link"];
+	$thumbnail = $result["data"]["thumbnail"];
 }
 if ($result["status"] == "error"){
-	$embed = $result["description"];
+	$link = $result["description"];
 }
 ?>
 
@@ -22,10 +23,11 @@ if ($result["status"] == "error"){
 	<script>
 		var included_cats = '<? if (isset($_POST["included_cats"])){echo html_entity_decode($_POST["included_cats"]);} else {echo null;} ?>';
 	</script>
-	<script src="./front/js/viewer.js"></script>
+
 	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
 	<link rel="stylesheet" href="/front/css/styles.css">
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
 	<script src="https://kit.fontawesome.com/581d130f1d.js" crossorigin="anonymous"></script>
 </head>
 <body style="margin:0px; height: calc(100vh - 20px); width: 100vw; padding: 0px;">
@@ -34,10 +36,14 @@ if ($result["status"] == "error"){
 	<input type="hidden" id="launch-input" target="_self">
 	</form>
 	<div class="player">
-		<?
-		echo html_entity_decode($embed);
-		 ?>
+		<video id = "main_player" poster="<? echo $thumbnail; ?>" playsinline controls>
+			<source src="<? echo $link; ?>" type="video/mp4" />
+		</video>
+
+	</video>
 	</div>
-	<script type="text/javascript">setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Safari/605.1.15');</script>
+	<!--<script type="text/javascript">setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Safari/605.1.15');</script>-->
+	<script src="https://cdn.plyr.io/3.5.10/plyr.js"></script>
+	<script src="./front/js/viewer.js"></script>
 </body>
 </html>
