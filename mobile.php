@@ -25,7 +25,15 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="age-overlay" class="content"> 
+        <div class="content-header">
+            <h1><? echo locale('18-question','Вам исполнилось 18 лет?','service'); ?></h1>
+            <div class="content-actions">
+                <div class="action-btn"><? echo locale('yes','Да','service'); ?></div>
+                <div class="action-btn"><? echo locale('no','Нет','service'); ?></div>
+            </div>
+        </div>
+    </div>
     <div id="presets" class="modal" style="display:none!important;">
         <p>Выберите один из пресетов</p>
         <div class="presets">
@@ -52,7 +60,7 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
 
 
     <div id="header"> 
-        <div class="navbar-brand"><? echo locale('brand','PHRand','service');?></div>
+        <div class="navbar-brand"><? //echo locale('brand','PHRand','service');?> <img src="./front/img/logo.png" alt="<? echo locale('brand','PHRand','service');?>"></div>
         <div class="control-group">
             <a class="control" href='#presets' rel="modal:open" ><? echo locale('presets','Пресеты','service'); ?></a>
             <a class="control" id="help"><? echo locale('help','Помощь  ','service'); ?></a>
