@@ -13,7 +13,23 @@ include './api/pq.php';
 
 //'https://www.pornhub.com/embed/ph568908a4ca079'
 function PHFK($embed){
-    $file = file_get_contents($embed);
+
+  $opts = array(
+        'http'=>array(
+          'method'=>'GET',
+          'header'=>`Accept: */*
+                Connection: Keep-Alive
+                Host: ce.phncdn.com
+                Accept-Language: ru
+                User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15
+                Referer: http://rt.pornhub.com
+                Accept-Encoding: identity`
+        )
+      );
+      
+      $context = stream_context_create($opts);
+      
+    $file = file_get_contents($embed,false,$context);
     $dom1 = new DOMDocument();
     $dom1->loadHTML(html_entity_decode($file));
     $scripts = $dom1->getElementsByTagName('script');
@@ -63,6 +79,7 @@ function PHFK($embed){
     unset($tokens[$HLS480Pi]);
     unset($tokens[$HLSARRAYi]);
     //COMPARE ARRAY PREPARATION
+
     $variables = array();
     for ($i=0; $i<count($tokens); $i++){
         $key = ''; $value = '';
@@ -118,18 +135,8 @@ function PHFK($embed){
     }
     return $url;
 }
-$c;
-$time;
-for ($i=0; $i<30; $i++){
-    $start = microtime();
-    PHFK('https://www.pornhub.com/embed/ph568908a4ca079');
-    $end = microtime();
-    $time += abs($start - $end);
-    $c++;
-}
-echo $time/$c;
 
-//echo '<video src="'.PHFK('https://www.pornhub.com/embed/ph568908a4ca079').'" controls></video>';
+echo '<video src="'.PHFK('https://www.pornhub.com/embed/ph568908a4ca079').'" controls></video>';
 
 
 
