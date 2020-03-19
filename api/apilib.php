@@ -57,7 +57,30 @@ class Action{
     }
 }
 function PHFK($embed){
-    $file = file_get_contents($embed);
+    $opts = array(
+        'http'=>array(
+          'method'=>"GET",
+          'header'=>`Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+          Accept-Encoding: gzip, deflate, br
+          Accept-Language: ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7
+          Connection: keep-alive
+          Cookie: bs=mm5u9jkqdtb4mn0fkajgi758fypq5on3; ss=507611426022548199; lang=ru; RNLBSERVERID=ded6829; ua=97fc230848bc304ccee289a55f3e5339; platform_cookie_reset=pc; platform=pc
+          DNT: 1
+          Host: www.pornhub.com
+          Referer: www.pornhub.com
+          Sec-Fetch-Dest: iframe
+          Sec-Fetch-Mode: navigate
+          Sec-Fetch-Site: cross-site
+          Upgrade-Insecure-Requests: 1
+          User-Agent: Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Mobile Safari/537.36
+          X-Forwarded-For: 203.0.113.195
+          REMOTE_ADDR: 203.0.113.195`
+        )
+      );
+      
+      $context = stream_context_create($opts);
+      
+    $file = file_get_contents($embed,false,$context);
     $dom1 = new DOMDocument();
     $dom1->loadHTML(html_entity_decode($file));
     $scripts = $dom1->getElementsByTagName('script');
