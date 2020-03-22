@@ -14,7 +14,7 @@ $link = $_GET['link'];
     <link rel="stylesheet" href="./front/css/frame.css">
 </head>
 <body>
-    <iframe id='main_frame' src="http://theproject.me/api/api.php?action=getiframe&embed_link=<? echo urlencode($link); ?>" frameborder="0"></iframe>
+    <iframe crossorigin="" id='main_frame' src="http://theproject.me/api/api.php?action=getiframe&embed_link=<? echo urlencode($link); ?>" frameborder="0"></iframe>
         <video id = "main_player" poster="<? echo $thumbnail; ?>" playsinline controls>
 			<source id="main_player_source" src="" type="video/mp4" />
 		</video>

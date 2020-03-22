@@ -7,7 +7,7 @@
 header('Content-Type: text/html; charset=utf-8');
 include 'apilib.php';
 
-
+header('Access-Control-Allow-Origin: http://w950994g.bget.ru/');
 use Noxyra\PornhubApi\Api\PornhubApi as PornhubApi;
 foreach (glob("./actions/*.php") as $filename)
 {

@@ -1,7 +1,7 @@
 $(document).on('click','.mhp1138_play',function(){
     alert('hui');
 });
-setTimeout(() => { 
+/*setTimeout(() => { 
 
     //var link = $('#main_frame').contents().find('source')[0];
     var vars = document.getElementById("main_frame").contentWindow.flashvars;
@@ -10,5 +10,11 @@ setTimeout(() => {
     $('#main_player_source').attr('src',link);
     const player = new Plyr('#main_player');
     
-}, 1000); 
+}, 1000); */
 
+window.addEventListener('message', function (event) {
+    var link = event.data.mediaDefinitions[0].videoUrl;
+    console.log(link);
+    $('#main_player_source').attr('src',link);
+    const player = new Plyr('#main_player');
+}, false);
