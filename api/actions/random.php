@@ -15,7 +15,7 @@
          * Action is being called by this name
          */
         public static $actionName = "search";
-        
+        public static $outputType = "json";
         /**
          * Limit for the first N pages randomizer chooses from
          */
