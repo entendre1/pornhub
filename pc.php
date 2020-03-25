@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>rhub.dev</title>
+	<title>PHRandom</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -50,7 +50,7 @@
 				    		$data = json_decode($j);
 				    		echo '<div id="all_classic" class="b-md-4 h3 block" onclick=\'cat_all("classic")\'>'.$local->service->all.'</div>';
 							for($i = 0; isset($data->{"popularClassic"}[$i]); $i++){
-								echo '<div id="'.$data->{"popularClassic"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularClassic"}[$i].'")\'>'.$local->{"categories"}->{$data->{"popularClassic"}[$i]}.'</div>';
+								echo '<div id="'.$data->{"popularClassic"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularClassic"}[$i].'", false)\'>'.$local->{"categories"}->{$data->{"popularClassic"}[$i]}.'</div>';
 							}
 						?>
 					</div>
@@ -69,12 +69,12 @@
 								if($data->{"classic"}[$i] == $data->{"popularClassic"}[$j])
 									$duplicate = true;
 							if(!$duplicate)
-								echo '<div id="'.$data->{"classic"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"classic"}[$i].'")\'>'.$local->{"categories"}->{$data->{"classic"}[$i]}.'</div>';
+								echo '<div id="'.$data->{"classic"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"classic"}[$i].'", false)\'>'.$local->{"categories"}->{$data->{"classic"}[$i]}.'</div>';
 						}
 					?>
 					</div>
 				</div>
-		     	<button class="btn btn-light d-fixed go-btn" onclick='viewer()'><h1>Go!</h1></button>
+		     	<button class="btn btn-light go-btn" id="go-btn" style="display:none;" onclick='viewer()'><h1>Go!</h1></button>
 		    </div>	
 		</div>
 		<div id="step_2_g" style="display: none;">
@@ -88,7 +88,7 @@
 						$data = json_decode($j);
 						echo '<div id="all_gay" class="b-md-4 h3 block" onclick=\'cat_all("gay")\'>'.$local->service->all.'</div>';
 						for($i = 0; isset($data->{"popularGay"}[$i]); $i++){
-							echo '<div id="'.$data->{"popularGay"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularGay"}[$i].'")\'>'.$local->{"categories"}->{"Gay"}->{$data->{"popularGay"}[$i]}.'</div>';
+							echo '<div id="'.$data->{"popularGay"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"popularGay"}[$i].'", false)\'>'.$local->{"categories"}->{"Gay"}->{$data->{"popularGay"}[$i]}.'</div>';
 						}
 					?>
 					</div>
@@ -108,13 +108,13 @@
 								if($data->{"gay"}[$i] == $data->{"popularGay"}[$j])
 									$duplicate = true;
 							if(!$duplicate)
-									echo '<div id="'.$data->{"gay"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"gay"}[$i].'")\'>'.$local->{"categories"}->{"Gay"}->{$data->{"gay"}[$i]}.'</div>';
+									echo '<div id="'.$data->{"gay"}[$i].'" class="b-md-4 h3 block" onclick=\'cat_clicked("'.$data->{"gay"}[$i].'", false)\'>'.$local->{"categories"}->{"Gay"}->{$data->{"gay"}[$i]}.'</div>';
 								
 						}
 					?>
 					</div>
 				</div>
-		     	<button class="btn btn-light d-fixed go-btn" onclick='viewer()'><h1>Go!</h1></button>
+		     	<button class="btn btn-light go-btn" id="go-btn" style="display:none;" onclick='viewer()'><h1>Go!</h1></button>
 			</div>
 		</div>
 	</div>

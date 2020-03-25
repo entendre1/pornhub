@@ -34,7 +34,7 @@ a:hover {
 	border-radius: 10px;
 	text-align: center;
 	transition: 0.5s;
-	background: black;
+	background: rgb(27,27,27);
 }
 .b-md-4:hover{
 	box-shadow: 0 0 5px rgba(247, 145, 0, 1);

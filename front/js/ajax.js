@@ -3,7 +3,7 @@ $('#step_2_c').hide();
 $('#step_2_g').hide();
 $('#step_2_l').hide();
 
-var cats = new Map([['anal', false]]);  
+var cats = new Map();  
 var allToggle = false;
 var classic = [
 		"180-1",
@@ -196,21 +196,29 @@ function cat_all(type){
 	}
 	if(type == "classic")
 		classic.forEach(function(item, i, arr){
-			cat_clicked(item);
+			cat_clicked(item, allToggle);
 		});
 	else if(type == "gay")
 		gay.forEach(function(item, i, arr){
-			cat_clicked(item);
+			cat_clicked(item, allToggle);
 		});
 }
 
-function cat_clicked(cat){
-	if(!cats[cat]){
-		cats[cat] = true;
+function cat_clicked(cat, all){
+	if(!cats.get(cat) || all){
+		cats.set(cat, true);
 		$('#'+cat).css('background-color', 'rgb(247,145,0)');
+		if(cats.size > 0){
+			$('#go-btn').show();
+			$('#go-btn').css('display', 'fixed');
+		}
 	}else{
-		cats[cat] = false;
+		cats.delete(cat);
 		$('#'+cat).css('background-color', '');
+		if(cats.size <= 0){
+			$('#go-btn').css('display', '');
+			$('#go-btn').hide();
+		}
 	}
 }
 
