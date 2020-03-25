@@ -37,9 +37,10 @@
 
 	if ($detect->isMobile()){
 		include 'mobile.php';
-	}else{
+	}else
+	if ($detect->isMobile()){
 		include 'pc.php';
-	}
+	}else include 'pc.php';
 
 
 

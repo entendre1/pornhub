@@ -25,14 +25,14 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
     <link rel="stylesheet" href="front/css/front.css">
     <title>Document</title>
 </head>
-<body>
+<body class="stop-scrolling">
     <div id="age-overlay" class="chapter"> 
         <div class="chapter-header">
             <h1><? echo locale('18-question','Вам исполнилось 18 лет?','service'); ?></h1>
         </div>
-        <div class="chapter-controls">
-                <div id="18-control" class="chapter-control"><? echo locale('yes','Да','service'); ?></div>
-                <div id="go-out" class="chapter-control"><? echo locale('no','Нет','service'); ?></div>
+        <div class="chapter-question">
+                <div id="18-control" class="question-control success"><? echo locale('yes','Да','service'); ?></div>
+                <div id="go-out" class="question-control error"><? echo locale('no','Нет','service'); ?></div>
         </div>
     </div>
     <div id="service-popularClassic" style="display:none;">
@@ -50,13 +50,19 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
         ?>
     </div>
     <div id="crossroad" class="chapter" style="display:none;">
-        <div class="chapter-header">
-            <h1><? echo locale('yes','Да','service'); ?></h1>
-        </div>
         <div class="chapter-controls">
-            <div id="crossroad-classic" class="chapter-control">Классика</div>
-            <div id="crossroad-gay" class="chapter-control">Гей</div>
-            <div id='crossroad-random' class="chapter-control">Полный рандом</div>
+            <div id="crossroad-classic" class="chapter-control">
+                <i class="fas fa-venus-mars fa-4x" aria-hidden="true"></i> 
+                <span>Классика</span>
+             </div>
+            <div id="crossroad-gay" class="chapter-control">
+                <i class="fas fa-mars-double fa-4x" aria-hidden="true"></i>
+                <span>Гей</span>
+            </div>
+            <div id='crossroad-random' class="chapter-control">
+                <i class="fas fa-dice fa-4x" aria-hidden="true"></i>
+                <span>Случайно</span>
+            </div>
         </div>
     </div>
     <div id="presets" class="modal" style="display:none!important;">
@@ -86,11 +92,12 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
 
     <div id="header"> 
         <div id="back-to-crossroad"><i class="fas fa-arrow-left"></i></div>
-        <div class="navbar-brand"><? //echo locale('brand','PHRand','service');?> <img src="./front/img/logo.png" alt="<? echo locale('brand','PHRand','service');?>"></div>
+        <div class="navbar-brand"><? //echo locale('brand','PHRand','service');?> <img  src="./front/img/logo.png" alt="<? echo locale('brand','PHRand','service');?>"></div>
         <div class="control-group">
             <a class="control" href='#presets' rel="modal:open" ><? echo locale('presets','Пресеты','service'); ?></a>
             <a class="control" id="help"><? echo locale('help','Помощь  ','service'); ?></a>
         </div>
+        <div id="right"></div>
     </div>
     <div id="content"> 
         <div class="content-header">
@@ -113,8 +120,8 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
             ?>
         </div>
     </div>
-    <div id="launch-btn" style="display:none;">O</div>
-    <div id="preset-launch-btn" style="display:none;" >O</div>
+    <div id="launch-btn" style="display:none;"><i class="fas fa-play"></i></div>
+    <div id="preset-launch-btn" style="display:none;" ><i class="fas fa-play"></i></div>
     <form id="launch-form" action="viewer.php" method="post" target="_blank" class="hidden">
         <input id="launch-input" type="hidden">
     </form>

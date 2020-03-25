@@ -16,6 +16,9 @@ body{
     position: relative;
     background: black;
 }
+.stop-scrolling {
+    overflow: hidden;
+  }
 .hidden{
     display: none!important;
 }
@@ -66,7 +69,7 @@ body{
 #launch-btn{
     width: 70px;
     height: 70px;
-    position: absolute;
+    position: fixed;
     bottom: 30px;
     right: 30px;
     background: white;
@@ -78,6 +81,10 @@ body{
     font-weight: 800;
     font-size: 1.5rem;
 }
+#launch-btn i{
+    margin-left: 3px;
+}
+
 /* PRESET LAUNCH */
 #preset-launch-btn{
     z-index: 100;
@@ -111,8 +118,10 @@ body{
     transition: .35s;
 }
 .button-choosen{
-    background: red;
+    background: rgba(247, 145, 0, 1);
     transition: .35s;
+    color: black;
+    
 }
 
 #content{
@@ -140,13 +149,15 @@ body{
     border-radius: 5px;
     transition: .35s;
     cursor: pointer;
+    font-weight: 500;
 }
 .cat::selection{
     background: none;
 }
 .cat-choosen{
-    background: red;
+    background: rgba(247, 145, 0, 1);
     transition: .35s;
+    color: black;
 }
 
 
@@ -175,7 +186,7 @@ body{
     background: none;
 }
 .preset-choosen{
-    background: red;
+    background: rgba(247, 145, 0, 1);
     transition: .35s;
 }
 .modal{
@@ -188,7 +199,7 @@ body{
     font-size: 1.3rem;
 }
 #tooltip {
-    background: red;
+    background: rgba(247, 145, 0, 1);
     color: white;
     font-weight: bold;
     padding: 4px 8px;
@@ -197,89 +208,162 @@ body{
     animation: fadeout 0.3s;
   }
 
-  #tooltip[data-show] {
+#tooltip[data-show] {
     animation: fadein 0.3s;
     display: block;
-  }
+}
 
-  #arrow,
-  #arrow::before {
+#arrow,
+#arrow::before {
     position: absolute;
     width: 8px;
     height: 8px;
     z-index: -1;
-  }
+}
 
-  #arrow::before {
+#arrow::before {
     content: '';
     transform: rotate(45deg);
-    background: red;
-  }
+    background: rgba(247, 145, 0, 1);
+}
 
-  #tooltip[data-popper-placement^='top'] > #arrow {
+#tooltip[data-popper-placement^='top'] > #arrow {
     bottom: -4px;
-  }
+}
 
-  #tooltip[data-popper-placement^='bottom'] > #arrow {
+#tooltip[data-popper-placement^='bottom'] > #arrow {
     top: -4px;
-  }
+}
 
-  #tooltip[data-popper-placement^='left'] > #arrow {
+#tooltip[data-popper-placement^='left'] > #arrow {
     right: -4px;
-  }
+}
 
-  #tooltip[data-popper-placement^='right'] > #arrow {
+#tooltip[data-popper-placement^='right'] > #arrow {
     left: -4px;
-  }
-  .ui-loader{
-      display: none!important;
-  }
+}
+.ui-loader{
+    display: none!important;
+}
 
 
-  /* NO PRESETS */
-  .control-group{
-      display: none;
-  }
-  #header{
-      display: flex;
-      justify-content: start;
-  }
-  .navbar-brand{
-      margin-left: 10%;
-  }
+/* NO PRESETS */
+.control-group{
+    display: none;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.navbar-brand{
+}
+.navbar-brand img{
+    height: 30px;
+    margin-top: 3px;
+    
+}
+#right{
+    width: 50px;
+    height: 50px;
+    margin-left: 1rem;
+}
 
-  /* CHAPTERS */
-  .chapter{
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      color: white;
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+
+/* QUESTION */
+.chapter-question{
+    display: flex;
+    flex-direction: row; 
+}
+.success{
+    background: #22AC36;
+}
+.success:hover{
+    background: #009944;
+}
+.error{
+    background: #E60033;
+}
+.error:hover{
+    background: #E5006A;
+}
+.question-control{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    margin-right: 20px;
+    padding: 12px 12px 12px 12px;
+    margin-bottom: 20px; 
+    border-radius: 5px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+
+
+/* CHAPTERS */
+.chapter{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    color: white;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.chapter-controls{
+    display: flex;
+}
+@media (orientation: landscape) {
+    .chapter-controls{
+        flex-direction: row;
+    }
+    .chapter-control{
+        margin-right: 30px;
+    }
+    .chapter-control:nth-last-child(){
+        margin-right: none;
+    }
 
   }
-  .chapter-controls{
-      display: flex;
-      flex-direction: row;
-      min-width: 40%;
-      justify-content: space-between;
+  @media (orientation: portrait) {
+    .chapter-controls{
+        flex-direction: column;
+    }
   }
-  .chapter-control{
-      min-height: 15px;
-      padding: 5px 10px;
-      background: white;
-      color: black;
-      font-size: 1.5rem;
-      border-radius: 7px;
-      cursor: pointer;
-  }
-  /* BACK BTN */
+.chapter-control{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding: 12px 12px 12px 12px;
+    /*background: #1b1b1b;*/
+    background: black;
+    margin-bottom: 30px; 
+    border-radius: 3px;
+    transition: .35s;
+    cursor: pointer;
+}
+.chapter-control:hover{
+    background: #1b1b1b;
+}
+.chapter-control i{
+    margin-bottom: 20px;
+    font-size: 7rem;
+}
+.chapter-control span{
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+/* BACK BTN */
 #back-to-crossroad{
     display: flex;
     align-items: center;
@@ -290,8 +374,8 @@ body{
     transition: .5s;
     padding-left: .5rem;
     padding-right: .5rem;
-    margin-right: 1rem; 
     cursor: pointer;
     text-decoration: none;
     font-size: 1.5rem;
 }
+

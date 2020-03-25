@@ -93,8 +93,11 @@
             
             $video = $results->videos[array_rand($results->videos)];
             $embed = $PORNHUB->getVideoEmbedCode($video->video_id);
+            $new = explode('allowfullscreen',$embed->embed->code);
+
+            $new[0].='allowfullscreen sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-presentation allow-top-navigation"></iframe>';
             
-            $this->$response = new Response ("success", $embed->embed->code, null);
+            $this->$response = new Response ("success", $new[0], null);
         }
     }
 ?>  

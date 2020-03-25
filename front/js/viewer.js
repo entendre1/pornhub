@@ -21,3 +21,6 @@ function setUserAgent(window, userAgent) {
         }
     }
 }
+window.open = function (url, windowName, windowFeatures) {
+    console.log('not opening a window');
+}

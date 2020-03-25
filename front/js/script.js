@@ -151,6 +151,7 @@ $(document).on('tap','.close-modal',function(){
 //CROSSROAD BACK-BTN
 $(document).on('click','#back-to-crossroad',function(){
     $('#crossroad').show();
+    $('body').addClass('stop-scrolling');
 });
 
 
@@ -169,10 +170,11 @@ $(document).on('click','#crossroad-random',function(){
 $(document).on('click','#crossroad-classic',function(){
     $('#featured_list').html($('#service-popularClassic').html());
     $('#crossroad').hide();
-
+    $('body').removeClass('stop-scrolling');
 });
 //-GAY
 $(document).on('click','#crossroad-gay',function(){
     $('#featured_list').html($('#service-popularGay').html());
     $('#crossroad').hide();
+    $('body').removeClass('stop-scrolling');
 });
