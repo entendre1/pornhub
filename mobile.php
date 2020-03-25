@@ -15,6 +15,7 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://kit.fontawesome.com/581d130f1d.js" crossorigin="anonymous"></script>
     <script> const SITE_LANG = '<? echo html_entity_decode($SITE_LANG); ?>';
             const HELP_MODAL_DESCRIPTION = '<? echo html_entity_decode($HELP_MODAL_DESCRIPTION); ?>';
     </script>
@@ -25,7 +26,39 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="age-overlay" class="chapter"> 
+        <div class="chapter-header">
+            <h1><? echo locale('18-question','Вам исполнилось 18 лет?','service'); ?></h1>
+        </div>
+        <div class="chapter-controls">
+                <div id="18-control" class="chapter-control"><? echo locale('yes','Да','service'); ?></div>
+                <div id="go-out" class="chapter-control"><? echo locale('no','Нет','service'); ?></div>
+        </div>
+    </div>
+    <div id="service-popularClassic" style="display:none;">
+        <?
+            foreach ($list->popularClassic as $entry) {
+                echo '<div class="cat" data-category="'.$entry.'">'.locale($entry,$entry,'categories').'</div>';      
+            }
+        ?>
+    </div>
+    <div id="service-popularGay" style="display:none;">
+        <?
+            foreach ($list->popularGay as $entry) {
+                echo '<div class="cat" data-category="'.$entry.'">'.locale($entry,$entry,'categories').'</div>';      
+            }
+        ?>
+    </div>
+    <div id="crossroad" class="chapter" style="display:none;">
+        <div class="chapter-header">
+            <h1><? echo locale('yes','Да','service'); ?></h1>
+        </div>
+        <div class="chapter-controls">
+            <div id="crossroad-classic" class="chapter-control">Классика</div>
+            <div id="crossroad-gay" class="chapter-control">Гей</div>
+            <div id='crossroad-random' class="chapter-control">Полный рандом</div>
+        </div>
+    </div>
     <div id="presets" class="modal" style="display:none!important;">
         <p>Выберите один из пресетов</p>
         <div class="presets">
@@ -52,7 +85,8 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
 
 
     <div id="header"> 
-        <div class="navbar-brand"><? echo locale('brand','PHRand','service');?></div>
+        <div id="back-to-crossroad"><i class="fas fa-arrow-left"></i></div>
+        <div class="navbar-brand"><? //echo locale('brand','PHRand','service');?> <img src="./front/img/logo.png" alt="<? echo locale('brand','PHRand','service');?>"></div>
         <div class="control-group">
             <a class="control" href='#presets' rel="modal:open" ><? echo locale('presets','Пресеты','service'); ?></a>
             <a class="control" id="help"><? echo locale('help','Помощь  ','service'); ?></a>

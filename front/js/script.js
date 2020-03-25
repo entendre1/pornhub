@@ -45,14 +45,20 @@ function categoryOnClick(element){
     }
 
 }
-
+function launch(cats_str = null){
+    if (cats_str){
+        $('#launch-input').attr('name','included_cats');
+        $('#launch-input').attr('value',cats_str);
+        $('#launch-form').submit();
+    }else{
+        $('#launch-form').submit();
+    }
+}
 //MAIN MENU LAUNCH BUTTON
 $(document).on('click','#launch-btn',function(){
     cats = Array.from(library);
     var cats_str = cats.join(',');
-    $('#launch-input').attr('name','included_cats');
-    $('#launch-input').attr('value',cats_str);
-    $('#launch-form').submit();
+    launch(cats_str);
 
 });
 
@@ -132,7 +138,6 @@ $(document).on('tap','.preset',function(){
 
 
 });
-
 //LAUNCH PRESET
 $(document).on('tap','#preset-launch-btn',function(){
     $('#launch-input').attr('name','included_cats');
@@ -141,4 +146,33 @@ $(document).on('tap','#preset-launch-btn',function(){
 });
 $(document).on('tap','.close-modal',function(){
     $('#preset-launch-btn').hide();
+});
+
+//CROSSROAD BACK-BTN
+$(document).on('click','#back-to-crossroad',function(){
+    $('#crossroad').show();
+});
+
+
+//CHAPTERS
+//18-QUESTION
+$(document).on('click','#18-control',function(){
+    $('#age-overlay').hide();
+    $('#crossroad').show();
+});
+//CROSSROAD
+//-RANDOM
+$(document).on('click','#crossroad-random',function(){
+    launch();
+})
+//-CLASSIC
+$(document).on('click','#crossroad-classic',function(){
+    $('#featured_list').html($('#service-popularClassic').html());
+    $('#crossroad').hide();
+
+});
+//-GAY
+$(document).on('click','#crossroad-gay',function(){
+    $('#featured_list').html($('#service-popularGay').html());
+    $('#crossroad').hide();
 });
