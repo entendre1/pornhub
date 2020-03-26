@@ -1,13 +1,13 @@
 {
 	    "service":{
             "choose-cats":"Choose your categories",
-            "brand":"Pornhub Randomizer",
+            "brand":"PHRandom",
             "more":"More",
             "less":"Less",
             "18-question":"Are you 18+ years old?",
             "yes":"Yes",
             "no":"No",
-            "absolutely-random":"Absolutely Random",
+            "random":"Random",
             "classic":"Classic",
             "gay":"Gay",
             "most-popular":"Most popular:",

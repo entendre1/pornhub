@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="wrapper container-fluid ">
-		<div class="placeholder align-items-center text-center" style="height: 100vh;"><?=$local->service->brand?></div>
+		<div class="row placeholder justify-content-center"><img  height="60px" src="./front/img/logo.png" alt="<?=$local->service->brand?>"></div>
 		<div id="step_0">
 			<div class="row justify-content-center align-items-center" style="height: 100vh;" >
 				<div class="col-md-12 h1 text-center">
@@ -36,13 +36,13 @@
 		    		$j = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/api/cats.data' );
 					$data = json_decode($j);
 				?>
-		     	<div class="b-md-4 col-md-3 h1 block" onclick='viewer("all")'><i class="fas fa-dice fa-4x"></i> <br><?=$local->service->{"absolutely-random"}?></div>
+		     	<div class="b-md-4 col-md-3 h1 block" onclick='viewer("all")'><i class="fas fa-dice fa-4x"></i> <br><?=$local->service->random?></div>
 			</div>
 		</div>
 		<div id="step_2_c" style="display: none;">
 			<div class="row  justify-content-center align-items-center" style="height: calc(100vh - 20px);">
 		    	<button class="btn back-button" onclick='next_step("step_1","step_2_c")'><i class="fas fa-arrow-left fa-2x"></i></button>
-		    	<div class="row  justify-content-center align-items-center" style="height: calc(100vh - 20px);">
+		    	<div class="row  justify-content-center align-items-center" style="width:100vw;height: calc(100vh - 20px);">
 			    	<div class="col-md-12 block h2 text-center"><?=$local->service->{"most-popular"}?></div>
 			    	<div class="row col-md-12 justify-content-center">
 			    	<?
@@ -74,13 +74,13 @@
 					?>
 					</div>
 				</div>
-		     	<button class="btn btn-light go-btn" id="go-btn" style="display:none;" onclick='viewer()'><h1>Go!</h1></button>
+		     	<button class="btn btn-light go-btn" style="display:none;" onclick='viewer()'><i class="fas fa-play"></i></button>
 		    </div>	
 		</div>
 		<div id="step_2_g" style="display: none;">
 			<div class="row justify-content-center">
 		    	<button class="btn back-button" onclick='next_step("step_1","step_2_g")'><i class="fas fa-arrow-left fa-2x"></i></button>
-			    <div class="row  justify-content-center align-items-center" style="height: calc(100vh - 20px);">	
+			    <div class="row  justify-content-center align-items-center" style="width:100vw;height: calc(100vh - 20px);">	
 			    	<div class="col-md-10 block h2 text-center"><?=$local->service->{"most-popular"}?></div>
 			    	<div class="row col-md-12 justify-content-center">
 			    	<?
@@ -114,7 +114,7 @@
 					?>
 					</div>
 				</div>
-		     	<button class="btn btn-light go-btn" id="go-btn" style="display:none;" onclick='viewer()'><h1>Go!</h1></button>
+		     	<button class="btn btn-light go-btn" style="display:none;" onclick='viewer()'><i class="fas fa-play"></i></button>
 			</div>
 		</div>
 	</div>

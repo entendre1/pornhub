@@ -1,5 +1,5 @@
 /*-----------basic-----------*/
-*{
+*, .no-owerflow{
 	overflow-x: none;
 }
 html{
@@ -21,6 +21,8 @@ a:hover {
 }
 .placeholder{
 	position: absolute;
+	width: 100%;
+	top: 3px;
 	z-index: -10;
 	color:rgb(60, 51, 55);
 	font-size: 15vw;
@@ -31,13 +33,14 @@ a:hover {
 .b-md-4{
 	padding: 10px;
 	margin: 10px;
-	border-radius: 10px;
+	border-radius: 5px;
 	text-align: center;
 	transition: 0.5s;
 	background: rgb(27,27,27);
 }
 .b-md-4:hover{
 	box-shadow: 0 0 5px rgba(247, 145, 0, 1);
+	cursor: pointer;
 	/*color: rgb(160, 151, 155);*/
 }
 #step_2_c, #step_2_g{
@@ -56,40 +59,52 @@ a:hover {
 	border:none;
 	border-radius: 50vw;
 	transition: 0.5s;
+	font-size: 1.5rem;
 }
 .re-btn{
 	padding: 2px;
 	position: fixed;
 	z-index: 10;
 	top: 50px;
-	right: 50px;
-	min-width: 40px;
-	min-height: 40px;
-	width:5vw;
-	height:5vw;
+	right: 20px;
+	min-width: 50px;
+	min-height: 50px;
+	width: 6vw;
+	height: 6vw;
 	border:none;
-	border-radius: 40px;
+	border-radius: 100px;
 	transition: 0.5s;
+	font-weight: 800;
+	font-size: 1.5em;
 }
 .more-btn, .re-btn, .go-btn{
-	background: rgb(247, 145, 0);	
-	border:none;
+	background: rgb(247, 145, 0);
+	border: none;
 	color: black;
 }
 .re-btn:hover, .go-btn:hover, .more-btn:hover{
 	color: black;
 	background-color: rgba(247, 145, 0, 0.5);
+	cursor: pointer;
 }
 .hidden{
 	visibility: none;
 }
-.player{
-	background-color: rgb(40, 31, 35);
-	color: white;
-	font-size: 30pt;
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
+@media(min-width: 576px){
+	.player{
+		background-color: rgb(40, 31, 35);
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+	}
+}
+@media(max-width: 576px){
+	.player{
+		background-color: rgb(40, 31, 35);
+		position: fixed;
+		width: 100vw;
+		height: calc(100vh - 40px);
+	}
 }
 .back-button{
 	float: left;

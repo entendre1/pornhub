@@ -1,13 +1,13 @@
 {
         "service":{
             "choose-cats":"Выберите категории",
-            "brand":"Pornhub Randomizer",
+            "brand":"PHRandom",
             "more":"Больше",
             "less":"Меньше",
             "18-question":"Вам больше 18 лет?",
             "yes":"Да",
             "no":"Нет",
-            "absolutely-random":"Абсолютно случайно",
+            "random":"Cлучайно",
             "classic":"Классика",
             "gay":"Гей",
             "most-popular":"Наиболее популярное:",
