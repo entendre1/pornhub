@@ -284,7 +284,7 @@ body{
 .error{
     background: #E60033;
 }
-.error:hover{
+.error:hover, .error-clicked{
     background: #E5006A;
 }
 .question-control{
@@ -320,23 +320,7 @@ body{
 .chapter-controls{
     display: flex;
 }
-@media (orientation: landscape) {
-    .chapter-controls{
-        flex-direction: row;
-    }
-    .chapter-control{
-        margin-right: 30px;
-    }
-    .chapter-control:nth-last-child(){
-        margin-right: none;
-    }
 
-  }
-  @media (orientation: portrait) {
-    .chapter-controls{
-        flex-direction: column;
-    }
-  }
 .chapter-control{
     display: flex;
     justify-content: center;
@@ -362,7 +346,48 @@ body{
     justify-content: center;
     font-size: 1.8rem;
 }
+@media (orientation: landscape) {
+    .chapter-controls{
+        flex-direction: row;
+    }
+    .chapter-control{
+        margin-right: 30px;
+    }
+    .chapter-control:nth-last-child(){
+        margin-right: none;
+    }
 
+  }
+  @media (orientation: portrait) {
+    .chapter-controls{
+        flex-direction: column;
+    }
+  }
+
+  @media (max-width: 320px) and (orientation:portrait){
+    .chapter-control{
+        margin-bottom: 20px;
+    } 
+    .chapter-control i{
+        margin-bottom: 20px;
+        font-size: 5.5rem;
+    }
+    .chapter-control span{
+        font-size: 1.2rem;
+    }
+  }
+ /* @media (max-width: 361px) and (orientation:portrait) and (min-width: 321px){
+    .chapter-control{
+        margin-bottom: 20px;
+    } 
+    .chapter-control i{
+        margin-bottom: 20px;
+        font-size: 5.3rem;
+    }
+    .chapter-control span{
+        font-size: 1.2rem;
+    }
+  }*/
 /* BACK BTN */
 #back-to-crossroad{
     display: flex;
