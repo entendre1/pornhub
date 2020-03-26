@@ -232,11 +232,24 @@ function viewer(){
 	var str_query;
 	var i = 0;
 	for(var entry in cats) {
-		if(cats[entry])
+		if(cats.get(entry))
 			query[i] = entry;
 		i++;
 	}
 	str_query = query.join();
 
 	$.redirect('/viewer.php', {'included_cats': str_query});
+}
+
+function setUserAgent(window, userAgent) {
+    if (window.navigator.userAgent != userAgent) {
+        var userAgentProp = { get: function () { return userAgent; } };
+        try {
+            Object.defineProperty(window.navigator, 'userAgent', userAgentProp);
+        } catch (e) {
+            window.navigator = Object.create(navigator, {
+                userAgent: userAgentProp
+            });
+        }
+    }
 }

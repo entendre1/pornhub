@@ -24,6 +24,7 @@ if ($result["status"] == "error"){
 		var included_cats = '<? if (isset($_POST["included_cats"])){echo html_entity_decode($_POST["included_cats"]);} else {echo null;} ?>';
 	</script>
 	<script src="./front/js/viewer.js"></script>
+	<script src="./front/js/ajax.js"></script>
 	<link rel="stylesheet" href="/front/css/styles.css">
 	<script src="https://kit.fontawesome.com/581d130f1d.js" crossorigin="anonymous"></script>
 </head>
@@ -37,6 +38,8 @@ if ($result["status"] == "error"){
 		echo html_entity_decode($embed);
 		 ?>
 	</div>
-	<script type="text/javascript">setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Safari/605.1.15');</script>
+	<script type="text/javascript">
+setUserAgent(window, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Safari/605.1.15');
+setUserAgent(document.querySelector('iframe').contentWindow, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Safari/605.1.15');</script>
 </body>
 </html>
