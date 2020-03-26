@@ -209,15 +209,15 @@ function cat_clicked(cat, all){
 		cats.set(cat, true);
 		$('#'+cat).css('background-color', 'rgb(247,145,0)');
 		if(cats.size > 0){
-			$('#go-btn').show();
-			$('#go-btn').css('display', 'fixed');
+			$('.go-btn').show();
+			$('.go-btn').css('display', 'fixed');
 		}
 	}else{
 		cats.delete(cat);
 		$('#'+cat).css('background-color', '');
 		if(cats.size <= 0){
-			$('#go-btn').css('display', '');
-			$('#go-btn').hide();
+			$('.go-btn').css('display', '');
+			$('.go-btn').hide();
 		}
 	}
 }
