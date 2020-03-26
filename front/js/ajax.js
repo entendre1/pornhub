@@ -227,15 +227,15 @@ function viewer(cat){
 	$.redirect('/viewer.php', {});
 }
 
+
 function viewer(){
 	var query = [];
 	var str_query;
 	var i = 0;
-	for(var entry in cats) {
-		if(cats.get(entry))
-			query[i] = entry;
+	cats.forEach(function(value, key, map){
+		query[i] = key;
 		i++;
-	}
+	});
 	str_query = query.join();
 
 	$.redirect('/viewer.php', {'included_cats': str_query});
