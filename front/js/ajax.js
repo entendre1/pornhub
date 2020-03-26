@@ -227,16 +227,29 @@ function viewer(cat){
 	$.redirect('/viewer.php', {});
 }
 
+
 function viewer(){
 	var query = [];
 	var str_query;
 	var i = 0;
-	for(var entry in cats) {
-		if(cats[entry])
-			query[i] = entry;
+	cats.forEach(function(value, key, map){
+		query[i] = key;
 		i++;
-	}
+	});
 	str_query = query.join();
 
 	$.redirect('/viewer.php', {'included_cats': str_query});
+}
+
+function setUserAgent(window, userAgent) {
+    if (window.navigator.userAgent != userAgent) {
+        var userAgentProp = { get: function () { return userAgent; } };
+        try {
+            Object.defineProperty(window.navigator, 'userAgent', userAgentProp);
+        } catch (e) {
+            window.navigator = Object.create(navigator, {
+                userAgent: userAgentProp
+            });
+        }
+    }
 }
