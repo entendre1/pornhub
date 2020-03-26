@@ -7,41 +7,20 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(61367311, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/61367311" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
     <meta name="theme-color" content="#1b1b1b">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no ">
+    <? include 'SEO.php'; ?>
     <link rel="icon" type="image/png" sizes="32x32" href="./front/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./front/img/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./front/img/favicon-16x16.png">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://kit.fontawesome.com/581d130f1d.js" crossorigin="anonymous"></script>
     <script> const SITE_LANG = '<? echo html_entity_decode($SITE_LANG); ?>';
             const HELP_MODAL_DESCRIPTION = '<? echo html_entity_decode($HELP_MODAL_DESCRIPTION); ?>';
     </script>
-
-    <script src="front/js/script.js"></script>
     <link rel="stylesheet" href="front/fonts/SF Display/SFUIDisplay.css">
+    <link rel="preload" href="front/fonts/SF Display/SFUIDisplay.css" as="style">
     <link rel="stylesheet" href="front/css/front.css">
+    <link rel="preload" href="front/css/front.css" as="style">
     <title><? echo locale('brand','PHRandom','service'); ?></title>
 </head>
 <body class="stop-scrolling">
@@ -144,5 +123,9 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
     <form id="launch-form" action="viewer.php" method="post" target="_blank" class="hidden">
         <input id="launch-input" type="hidden">
     </form>
+    <? include 'meter.php'; ?>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script async src="https://kit.fontawesome.com/581d130f1d.js" crossorigin="anonymous"></script>
+    <script async src="front/js/script.js"></script>
 </body>
 </html>

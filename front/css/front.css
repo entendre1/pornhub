@@ -15,6 +15,7 @@ html,body{
 body{
     position: relative;
     background: black;
+    font-display: swap;
 }
 .stop-scrolling {
     overflow: hidden;

@@ -4,8 +4,6 @@ let cats;
 let cats_toogle = false;
 let modal_help_shown = false;
 
-let preset_launch_show = false;
-
 //Category click
 $(document).on('mouseup','.cat',function(){
     $(this).toggleClass('cat-choosen');
@@ -61,93 +59,6 @@ $(document).on('click','#launch-btn',function(){
     launch(cats_str);
 
 });
-
-let popperInstance = null;
-let button;
-let tooltip;
-function create() {
-    popperInstance = Popper.createPopper(button, tooltip, {
-        modifiers: [
-        {
-            name: 'offset',
-            options: {
-            offset: [0, 8],
-            },
-        },
-        ],
-    });
-}
-function destroy() {
-    if (popperInstance) {
-      popperInstance.destroy();
-      popperInstance = null;
-    }
-  }
-  function show() {
-    tooltip.setAttribute('data-show', '');
-    create();
-  }
-
-  function hide() {
-    tooltip.removeAttribute('data-show');
-    destroy();
-  }
-
-//PRESET ON HOLD  - DESCRIPTION OF PRESET POPPER
-  $(document).on('taphold','.preset',function(){
-    $('#tooltip_text').text($(this).data('description'));
-    button = this;
-    tooltip = $("#tooltip")[0];
-    show();
-    setTimeout(hide,1000);
-
-});
-
-//PRESETS MODAL HELP
-$(document).on('click','.control[rel]',function(){
-    if (!modal_help_shown){
-        button = $('.preset')[0];
-        tooltip = $("#tooltip")[0];
-        $('#tooltip_text').text(HELP_MODAL_DESCRIPTION);
-        show();
-        setTimeout(hide,2000);
-        modal_help_shown = true;
-    }
-    if(preset_launch_show){
-        $('#preset-launch-btn').show();
-    }   
-});
-
-//CHOOSE ONLY ONE PRESET
-$(document).on('tap','.preset',function(){
-    let current = this;
-    $('.preset').each(function(index){
-        if ($('.preset')[index] != current){
-            $(this).removeClass('preset-choosen')
-        }
-    });
-    $(this).toggleClass('preset-choosen');
-
-    if ($(this).hasClass('preset-choosen')){
-        preset_launch_show = true;
-        $('#preset-launch-btn').show();
-    } else {
-        preset_launch_show = false;
-        $('#preset-launch-btn').hide();
-    }
-
-
-});
-//LAUNCH PRESET
-$(document).on('tap','#preset-launch-btn',function(){
-    $('#launch-input').attr('name','included_cats');
-    $('#launch-input').attr('value',$('.preset-choosen').data('cats'));
-    $('#launch-form').submit();
-});
-$(document).on('tap','.close-modal',function(){
-    $('#preset-launch-btn').hide();
-});
-
 //CROSSROAD BACK-BTN
 $(document).on('click','#back-to-crossroad',function(){
     $('#crossroad').show();

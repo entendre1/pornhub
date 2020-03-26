@@ -3,54 +3,63 @@
     font-style: normal;
     font-weight: 900;
     src: local('SFUIDisplay-Black'), url('SFUIDisplay-Black.woff') format('woff');
+    font-display: swap;
 }
 @font-face {
     font-family: 'SFUIDisplay';
     font-style: normal;
     font-weight: 800;
     src: local('SFUIDisplay-Heavy'), url('SFUIDisplay-Heavy.woff') format('woff');
+    font-display: swap;
 }
 @font-face {
     font-family: 'SFUIDisplay';
     font-style: normal;
     font-weight: 700;
     src: local('SFUIDisplay-Bold'), url('SFUIDisplay-Bold.woff') format('woff');
+    font-display: swap;
 }
 @font-face {
     font-family: 'SFUIDisplay';
     font-style: normal;
     font-weight: 600;
     src: local('SFUIDisplay-Semibold'), url('SFUIDisplay-Semibold.woff') format('woff');
+    font-display: swap;
 }
 @font-face {
     font-family: 'SFUIDisplay';
     font-style: normal;
     font-weight: 500;
     src: local('SFUIDisplay-Medium'), url('SFUIDisplay-Medium.woff') format('woff');
+    font-display: swap;
 }
 @font-face {
     font-family: 'SFUIDisplay';
     font-style: normal;
     font-weight: 400;
     src: local('SFUIDisplay-Regular'), url('SFUIDisplay-Regular.woff') format('woff');
+    font-display: swap;
 }
 @font-face {
     font-family: 'SFUIDisplay';
     font-style: normal;
     font-weight: 300;
     src: local('SFUIDisplay-Light'), url('SFUIDisplay-Light.woff') format('woff');
+    font-display: swap;
 }
 @font-face {
     font-family: 'SFUIDisplay';
     font-style: normal;
     font-weight: 200;
     src: local('SFUIDisplay-Ultralight'), url('SFUIDisplay-Ultralight.woff') format('woff');
+    font-display: swap;
 }
 @font-face {
     font-family: 'SFUIDisplay';
     font-style: normal;
     font-weight: 100;
     src: local('SFUIDisplay-Thin'), url('SFUIDisplay-Thin.woff') format('woff');
+    font-display: swap;
 }
 
 
