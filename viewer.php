@@ -16,6 +16,8 @@ if ($result["status"] == "error"){
 <html>
 <head>
 	<title>RHub|Player</title>
+	<meta name="theme-color" content="#000">
+	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
