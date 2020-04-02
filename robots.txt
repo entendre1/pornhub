@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /api/
+Disallow: /front/
+Disallow: /metter.php
+Disallow: /presetes.json
+Disallow: /SEO.php
+Disallow: /SEO_v.php
