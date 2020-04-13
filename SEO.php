@@ -1,2 +1,4 @@
-<meta name="description" content="Смотрите случайное видео с PornHub по своим предпочтениям, или доверьтесь полной случайности и получите уникальный опыт просмотра">
-<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Language" content="en">
+<meta name="description" content="Watch random videos from PornHub considering your preferences, or rely on fully random and get unique exprience">
+<meta name="keywords" content="randomizer,pornhub,randomporn,porn,random,xxx,sex,male,female,lesbian,homosexual,gay">
+
