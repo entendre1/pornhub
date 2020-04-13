@@ -126,6 +126,6 @@ $HELP_MODAL_DESCRIPTION = locale('help-modal-description','Удерживайт�
     <? include 'meter.php'; ?>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script async src="https://kit.fontawesome.com/581d130f1d.js" crossorigin="anonymous"></script>
-    <script async src="front/js/script.js"></script>
+    <script src="front/js/script.js"></script>
 </body>
 </html>
