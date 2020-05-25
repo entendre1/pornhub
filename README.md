@@ -1,2 +1,2 @@
-# Pornhub Radmonizer
+# Pornhub Randomizer
 by RadioNurshat & Dannikinfo 
