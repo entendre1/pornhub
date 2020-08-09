@@ -5,3 +5,4 @@ Disallow: /metter.php
 Disallow: /presetes.json
 Disallow: /SEO.php
 Disallow: /SEO_v.php
+SiteMap: /sitemap.xml
