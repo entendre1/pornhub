@@ -15,7 +15,10 @@
 	<script src="https://kit.fontawesome.com/581d130f1d.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery.redirect@1.1.4/jquery.redirect.min.js"></script>
 	<script src="/front/js/ajax.js"></script>
-  
+	 <link rel="icon" type="image/png" sizes="32x32" href="./front/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./front/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./front/img/favicon-16x16.png">
+  	<meta name="yandex-verification" content="6ed243612a212ef4" />
 </head>
 <body>
 	<div class="wrapper container-fluid ">
