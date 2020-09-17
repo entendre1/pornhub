@@ -22,13 +22,12 @@ function fullScreen(element) {
     }
   }
 var html = document.body;
-let detect = new MobileDetect(window.navigator.userAgent)
-if (detect.mobile()){
-    if (screenfull.isEnabled) {
-		screenfull.request(document.documentElement);
-	}
-    alert('fullscreen');
-}   
-$(document).on('swipe','body',function(){
-    document.documentElement.requestFullscreen();
-})
+//let detect = new MobileDetect(window.navigator.userAgent)
+//if (detect.mobile()){
+//    if (screenfull.isEnabled) {
+//		screenfull.request(document.documentElement);
+//	}
+//} 
+//$(document).on('swipe','body',function(){
+//    document.documentElement.requestFullscreen();
+//})
